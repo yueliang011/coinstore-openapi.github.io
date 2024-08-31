@@ -1,5 +1,5 @@
 ---
-title: Coinstore官方API文档
+title: Coin8官方API文档
 
 language_tabs: # must be one of https://git.io/vQNgJ
   
@@ -43,7 +43,7 @@ code_clipboard: true
 
 # 介绍
 
-欢迎使用Coinstore开发者文档，此文档是Coinstore API的唯一官方文档。
+欢迎使用Coin8开发者文档，此文档是Coin8 API的唯一官方文档。
 
 本文档提供了相关API的使用方法介绍。
 
@@ -51,7 +51,7 @@ RESTful API包含了资产，订单及行情等接口。
 
 Websocket则提供了行情相关的接口及推送服务。
 
-Coinstore API提供的服务会在此持续更新，请大家及时关注。
+Coin8 API提供的服务会在此持续更新，请大家及时关注。
 
 
 
@@ -61,7 +61,7 @@ Coinstore API提供的服务会在此持续更新，请大家及时关注。
 
 如需使用API，请先登录网页端，通过【用户中心】-【API管理】创建一个API key，再据此文档详情进行开发和交易。
 
-您可以点击 'https://www.coinstore.com/#/user/bindAuth/ManagementAPI' 创建 API Key。
+您可以点击 'https://www.coin8.co/#/user/bindAuth/ManagementAPI' 创建 API Key。
 
 每个用户可创建5组API Key，每组API key可以绑定5个不同的IP地址。API key一旦绑定了IP地址，则只能从绑定的IP地址使用该API key调用API接口。出于安全考虑，强烈建议您为API key绑定相应的IP地址。
 
@@ -71,7 +71,7 @@ Coinstore API提供的服务会在此持续更新，请大家及时关注。
 - `Secret Key` 签名认证加密所使用的密钥
 
 ## 接口类型
-Coinstore为用户提供两种接口，您可根据自己的使用场景和偏好来选择适合的方式进行查询行情、交易。
+Coin8为用户提供两种接口，您可根据自己的使用场景和偏好来选择适合的方式进行查询行情、交易。
 
 **REST API**
 
@@ -101,11 +101,11 @@ WebSocket是HTML5一种新的协议（Protocol）。它实现了客户端与服�
 
 **REST API**
 
-`https://futures.coinstore.com/api`
+`https://futures.coin8.co/api/`
 
 **WebSocket**
 
-`wss://ws-futures.coinstore.com/socket.io/?EIO=3&transport=websocket`
+`wss://ws-futures.coin8.co/socket.io/?version=1.0.0&EIO=3&transport=websocket`
 
 为保证API服务的稳定性，建议使用日本AWS云服务器进行访问。如使用中国大陆境内的客户端服务器，连接的稳定性将难以保证。
 
@@ -169,7 +169,7 @@ Mac hmacSha256 = Mac.getInstance("HmacSHA256");
 - POST请求: 路径里可以设置参数，参数可以以JSON格式发送在请求主体（body）里，没有参数的需要传{}
 
 一个合法的请求由以下几部分组成：
-- 方法请求地址：即访问服务器地址futures.coinstore.com，比如https://futures.coinstore.com/api/trade/order/place
+- 方法请求地址：futures.coin8.co，比如https://futures.coin8.co/api/trade/order/place
 - 必须和可选参数。
 - X-CS-APIKEY： 即用户申请的API Key。
 - X-CS-EXPIRES：您发出请求的时间戳。如：1629291143107。
@@ -717,8 +717,6 @@ HTTP常见的错误码如下：
 
 获取当前订单 V2 版本
 
-#### 新接口的 API域名地址 `https://futures.coinstore.com`  调用支持ApiKey
-
 
 ### HTTP请求:
 
@@ -805,7 +803,6 @@ HTTP常见的错误码如下：
 
 获取订单信息 V2 版本
 
-#### 新接口的 API域名地址 `https://futures.coinstore.com`  调用支持ApiKey
 
 ### HTTP请求:
 
@@ -1202,7 +1199,7 @@ HTTP常见的错误码如下：
 ## <span id="4">获取用户全部成交V2</span>
 获取全部成交记录 V2 版本
 
-#### 新接口的 API域名地址 `https://futures.coinstore.com`  调用支持ApiKey
+
 
 
 ### HTTP请求:
@@ -1615,8 +1612,8 @@ HTTP常见的错误码如下：
 ### 接入URL
 
 `
-wss://ws-futures.coinstore.com/socket.io/?EIO=3&transport=websocket
-`
+wss://ws-futures.coin8.co/socket.io/?version=1.0.0&EIO=3&transport=websocket`
+
 ### 鉴权
 注：signature: 签名方式同restful
 

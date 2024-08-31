@@ -1,5 +1,5 @@
 ---
-title: Coinstore官方API文档
+title: Coin8官方API文档
 
 language_tabs: # must be one of https://git.io/vQNgJ
   
