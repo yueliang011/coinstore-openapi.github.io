@@ -43,7 +43,7 @@ code_clipboard: true
 
 # 介绍
 
-欢迎使用Coinstore开发者文档，此文档是Coinstore API的唯一官方文档。
+欢迎使用Coin8开发者文档，Coin8 API的唯一官方文档。
 
 本文档提供了相关API的使用方法介绍。
 
@@ -51,7 +51,7 @@ RESTful API包含了资产，订单及行情等接口。
 
 Websocket则提供了行情相关的接口及推送服务。
 
-Coinstore API提供的服务会在此持续更新，请大家及时关注。
+Coin8 API提供的服务会在此持续更新，请大家及时关注。
 
 
 
@@ -60,7 +60,7 @@ Coinstore API提供的服务会在此持续更新，请大家及时关注。
 ## 创建APIkey
 
 如需使用API，请先登录网页端，通过【用户中心】-【API管理】创建一个API key，再据此文档详情进行开发和交易。
-[您可以点击创建APIKey]: https://www.coinstore.com/#/user/bindAuth/ManagementAPI
+[您可以点击创建APIKey]: https://www.coin8.co/#/user/bindAuth/ManagementAPI
 
 每个用户可创建5组API Key，每组API key可以绑定5个不同的IP地址。API key一旦绑定了IP地址，则只能从绑定的IP地址使用该API key调用API接口。出于安全考虑，强烈建议您为API key绑定相应的IP地址。
 
@@ -71,7 +71,7 @@ Coinstore API提供的服务会在此持续更新，请大家及时关注。
 
 
 ## 接口类型
-Coinstore为用户提供两种接口，您可根据自己的使用场景和偏好来选择适合的方式进行查询行情、交易。
+Coin8为用户提供两种接口，您可根据自己的使用场景和偏好来选择适合的方式进行查询行情、交易。
 
 **REST API**
 
@@ -101,11 +101,11 @@ WebSocket是HTML5一种新的协议（Protocol）。它实现了客户端与服�
 
 **REST API**
 
-`https://api.coinstore.com/api`
+` https://api.coin8.co/api/`
 
 **WebSocket**
 
-`wss://ws.coinstore.com/s/ws`
+`wss://ws.coin8.co/s/ws`
 
 为保证API服务的稳定性，建议使用日本AWS云服务器进行访问。如使用中国大陆境内的客户端服务器，连接的稳定性将难以保证。
 
@@ -192,12 +192,6 @@ Mac hmacSha256 = Mac.getInstance("HmacSHA256");
 
 >注意： key的值为第2步计算出来的哈希值。
 
-**Python示例**
-
- https://coinstore-sg-encryption.s3.ap-southeast-1.amazonaws.com/filesUpload/ex1/public/coinstore.py
- 
- `推荐python sdk使用3.9版本，使用如果版本低于3.9版本，可能会造成兼容性或者签名计算有误的情况。`
-
 # API接入说明
 
 ## <span id="a3">请求格式</span>
@@ -206,7 +200,7 @@ Mac hmacSha256 = Mac.getInstance("HmacSHA256");
 - POST请求: 路径里可以设置参数，参数可以以JSON格式发送在请求主体（body）里，没有参数的需要传{}
 
 一个合法的请求由以下几部分组成：
-- 方法请求地址：即访问服务器地址api.coinstore.com，比如https://api.coinstore.com/api/trade/order/place
+- 方法请求地址：即访问服务器地址api.coin8.co，比如https://api.coin8.co/api/trade/order/place
 - 必须和可选参数。
 - X-CS-APIKEY： 即用户申请的API Key。
 - X-CS-EXPIRES：您发出请求的时间戳。如：1629291143107。
@@ -313,7 +307,7 @@ import json
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/v2/public/config/spot/symbols"
+url = "https://api.coin8.co/api/v2/public/config/spot/symbols"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -331,7 +325,6 @@ headers = {
  'exch-language': 'en_US',
  'Content-Type': 'application/json',
  'Accept': '*/*',
- # 'Host': 'https://api.coinstore.com',
  'Connection': 'keep-alive'
 }
 response = requests.request("POST", url, headers=headers, data=payload)
@@ -424,7 +417,7 @@ import requests
 
 # api查询币种信息
 
-url = "https://api.coinstore.com/api/fi/v1/common/currency?currencyCode=ETH"
+url = "https://api.coin8.co/api/fi/v1/common/currency?currencyCode=ETH"
 api_key = b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -496,7 +489,7 @@ import json
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/spot/accountList"
+url = "https://api.coin8.co/api/spot/accountList"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -514,7 +507,6 @@ headers = {
  'exch-language': 'en_US',
  'Content-Type': 'application/json',
  'Accept': '*/*',
- # 'Host': 'https://api.coinstore.com',
  'Connection': 'keep-alive'
 }
 response = requests.request("POST", url, headers=headers, data=payload)
@@ -612,7 +604,7 @@ import math
 import time
 import requests
 
-url = "https://api.coinstore.com/api/fi/v3/asset/deposit/do"
+url = "https://api.coin8.co/api/fi/v3/asset/deposit/do"
 api_key = b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -720,7 +712,7 @@ import math
 import time
 import requests
 
-url = "https://api.coinstore.com/api/fi/v3/asset/deposit/record/list"
+url = "https://api.coin8.co/api/fi/v3/asset/deposit/record/list"
 api_key = b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -847,7 +839,7 @@ import math
 import time
 import requests
 
-url = "https://api.coinstore.com/api/fi/v3/asset/withdraw/record/list"
+url = "https://api.coin8.co/api/fi/v3/asset/withdraw/record/list"
 api_key = b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -959,7 +951,7 @@ import math
 import time
 import requests
 
-url = "https://api.coinstore.com/api/fi/v3/asset/doWithdraw"
+url = "https://api.coin8.co/api/fi/v3/asset/doWithdraw"
 api_key = b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -1038,7 +1030,7 @@ import math
 import time
 import requests
 
-url = "https://api.coinstore.com/api/fi/v3/asset/cancelWithdraw"
+url = "https://api.coin8.co/api/fi/v3/asset/cancelWithdraw"
 api_key = b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -1078,7 +1070,7 @@ print(response.text)
 ## <span id="2">划转资产</span>
 划转用户资产
 
-#### 目前支持合约<一>现货划转, API域名地址 `https://futures.api.coinstore.com/api`  调用支持ApiKey
+#### 目前支持合约<一>现货划转, API域名地址 `https://futures.api.coin8.co/api`  调用支持ApiKey
 
 
 ### HTTP请求:
@@ -1128,7 +1120,7 @@ import math
 import time
 import requests
 
-url = "https://api.coinstore.com/api/v1/future/transfer"
+url = "https://api.coin8.co/api/v1/future/transfer"
 api_key = b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -1205,7 +1197,7 @@ import json
 import math
 import time
 import requests 
-url = "https://api.coinstore.com/api/trade/order/active"
+url = "https://api.coin8.co/api/trade/order/active"
 api_key=b'your api_key'
 secret_key = b'your secret_key' 
 expires = int(time.time() * 1000)
@@ -1286,7 +1278,7 @@ print(response.text)
 
 获取当前订单 v2 版本
 
-#### 新接口的 API域名地址 `https://api.coinstore.com`  调用支持ApiKey
+#### 新接口的 API域名地址 `https://api.coin8.co`  调用支持ApiKey
 
 ### HTTP请求:
 - GET /api/v2/trade/order/active
@@ -1299,7 +1291,7 @@ import hmac
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/v2/trade/order/active"
+url = "https://api.coin8.co/api/v2/trade/order/active"
 api_key=b'your api_key'
 secret_key = b'your secret_key'  
 expires = int(time.time() * 1000)
@@ -1391,7 +1383,7 @@ import hmac
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/trade/match/accountMatches?symbol=tipusdt"
+url = "https://api.coin8.co/api/trade/match/accountMatches?symbol=tipusdt"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time()* 1000)
@@ -1509,7 +1501,7 @@ import math
 import time
 import requests
 import json
-url = "https://api.coinstore.com/api/trade/order/cancel"
+url = "https://api.coin8.co/api/trade/order/cancel"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -1580,7 +1572,7 @@ import json
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/trade/order/cancelAll"
+url = "https://api.coin8.co/api/trade/order/cancelAll"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -1600,7 +1592,7 @@ headers = {
  'exch-language': 'en_US',
  'Content-Type': 'application/json',
  'Accept': '*/*',
- # 'Host': 'https://api.coinstore.com',
+ # 'Host': 'https://api.coin8.co',
  'Connection': 'keep-alive'
 }
 response = requests.request("POST", url, headers=headers, data=payload)
@@ -1634,7 +1626,7 @@ print(response.text)
 ## <span id="6">创建订单</span>
 创建订单
 
-#### 普通用户的账号同一时间只允许持有 50 笔活动委托，做市账号不受此限制。如果您是做市商但有账号未添加做市账号权限，请联系 Coinstore 交付部门。
+#### 普通用户的账号同一时间只允许持有 50 笔活动委托，做市账号不受此限制。如果您是做市商但有账号未添加做市账号权限，请联系 Coin8 交付部门。
 
 > 请求体
 
@@ -1658,7 +1650,7 @@ import json
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/trade/order/place"
+url = "https://api.coin8.co/api/trade/order/place"
 api_key=b'your api_key'
 secret_key = b'your secret key'
 expires = int(time.time() * 1000)
@@ -1683,7 +1675,7 @@ headers = {
  'exch-language': 'en_US',
  'Content-Type': 'application/json',
  'Accept': '*/*',
- # 'Host': 'https://api.coinstore.com',
+ # 'Host': 'https://api.coin8.co',
  'Connection': 'keep-alive'
 }
 response = requests.request("POST", url, headers=headers, data=payload)
@@ -1733,7 +1725,7 @@ print(response.text)
 ## <span id="13">批量下单</span>
 批量下单
 
-#### 普通用户的账号同一时间只允许持有 50 笔活动委托，做市账号不受此限制。如果您是做市商但有账号未添加做市账号权限，请联系 Coinstore 交付部门。
+#### 普通用户的账号同一时间只允许持有 50 笔活动委托，做市账号不受此限制。如果您是做市商但有账号未添加做市账号权限，请联系 Coin8 交付部门。
 
 > 请求体
 
@@ -1767,7 +1759,7 @@ import json
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/trade/order/placeBatch"
+url = "https://api.coin8.co/api/trade/order/placeBatch"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time() * 1000)
@@ -1802,7 +1794,7 @@ headers = {
  'exch-language': 'en_US',
  'Content-Type': 'application/json',
  'Accept': '*/*',
- # 'Host': 'https://api.coinstore.com',
+ # 'Host': 'https://api.coin8.co',
  'Connection': 'keep-alive'
 }
 response = requests.request("POST", url, headers=headers, data=payload)
@@ -1883,7 +1875,7 @@ import math
 import time
 import requests
 import json
-url = "https://api.coinstore.com/api/trade/order/cancelBatch"
+url = "https://api.coin8.co/api/trade/order/cancelBatch"
 api_key=b'your api_key'
 secret_key = b'secret_key'
 expires = int(time.time() * 1000)
@@ -1945,7 +1937,7 @@ import hmac
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/trade/order/orderInfo?ordId=1780715084580128"
+url = "https://api.coin8.co/api/trade/order/orderInfo?ordId=1780715084580128"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time()* 1000)
@@ -2037,7 +2029,7 @@ print(response.text)
 ## <span id="15">获取订单信息V2</span>
 获取订单信息V2
 
-#### 新接口的 API域名地址 `https://api.coinstore.com`  调用支持ApiKey
+#### 新接口的 API域名地址 `https://api.coin8.co`  调用支持ApiKey
 
 
 ### HTTP请求:
@@ -2052,7 +2044,7 @@ import hmac
 import math
 import time
 import requests
-url = "https://api.coinstore.com/api/v2/trade/order/orderInfo?ordId=1780715084580128"
+url = "https://api.coin8.co/api/v2/trade/order/orderInfo?ordId=1780715084580128"
 api_key=b'your api_key'
 secret_key = b'your secret_key'
 expires = int(time.time()* 1000)
@@ -2444,7 +2436,7 @@ print(response.text)
 ## **简介**
 
 ### 接入URL
-wss://ws.coinstore.com/s/ws
+wss://ws.coin8.co/s/ws
 
 1. 所有wss接口的 baseurl为: wss://<host:port>/s/ws
 
