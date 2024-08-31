@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Coinstore官方API文档</title>
+    <title>Coin8官方API文档</title>
     <link href="../images/favicon-ab07c47e.ico" rel="icon" type="image/ico">
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -493,7 +493,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='45fa4e00db'>介绍</h1>
-<p>欢迎使用Coinstore开发者文档，此文档是Coinstore API的唯一官方文档。</p>
+<p>欢迎使用Coin8开发者文档，此文档是Coin8 API的唯一官方文档。</p>
 
 <p>本文档提供了相关API的使用方法介绍。</p>
 
@@ -501,11 +501,11 @@
 
 <p>Websocket则提供了行情相关的接口及推送服务。</p>
 
-<p>Coinstore API提供的服务会在此持续更新，请大家及时关注。</p>
+<p>Coin8 API提供的服务会在此持续更新，请大家及时关注。</p>
 <h1 id='9e033de16f'>快速开始</h1><h2 id='c1ae0a8486'>接入准备</h2>
 <p>如需使用API，请先登录网页端，通过【用户中心】-【API管理】创建一个API key，再据此文档详情进行开发和交易。</p>
 
-<p>您可以点击 &#39;https://www.coinstore.com/#/user/bindAuth/ManagementAPI&#39; 创建 API Key。</p>
+<p>您可以点击 &#39;https://www.coin8.co/#/user/bindAuth/ManagementAPI&#39; 创建 API Key。</p>
 
 <p>每个用户可创建5组API Key，每组API key可以绑定5个不同的IP地址。API key一旦绑定了IP地址，则只能从绑定的IP地址使用该API key调用API接口。出于安全考虑，强烈建议您为API key绑定相应的IP地址。</p>
 
@@ -516,7 +516,7 @@
 <li><code>Secret Key</code> 签名认证加密所使用的密钥</li>
 </ul>
 <h2 id='5076603a3e'>接口类型</h2>
-<p>Coinstore为用户提供两种接口，您可根据自己的使用场景和偏好来选择适合的方式进行查询行情、交易。</p>
+<p>Coin8为用户提供两种接口，您可根据自己的使用场景和偏好来选择适合的方式进行查询行情、交易。</p>
 
 <p><strong>REST API</strong></p>
 
@@ -544,11 +544,11 @@
 <h2 id='urls'>接入URLs</h2>
 <p><strong>REST API</strong></p>
 
-<p><code>https://futures.coinstore.com/api</code></p>
+<p><code>https://futures.coin8.co/api/</code></p>
 
 <p><strong>WebSocket</strong></p>
 
-<p><code>wss://ws-futures.coinstore.com/socket.io/?EIO=3&amp;transport=websocket</code></p>
+<p><code>wss://ws-futures.coin8.co/socket.io/?version=1.0.0&amp;EIO=3&amp;transport=websocket</code></p>
 
 <p>为保证API服务的稳定性，建议使用日本AWS云服务器进行访问。如使用中国大陆境内的客户端服务器，连接的稳定性将难以保证。</p>
 <h2 id='586f3bcbf4'><span id="a4">签名认证</span></h2>
@@ -609,7 +609,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 - POST请求: 路径里可以设置参数，参数可以以JSON格式发送在请求主体（body）里，没有参数的需要传{}</p>
 
 <p>一个合法的请求由以下几部分组成：
-- 方法请求地址：即访问服务器地址futures.coinstore.com，比如https://futures.coinstore.com/api/trade/order/place
+- 方法请求地址：futures.coin8.co，比如https://futures.coin8.co/api/trade/order/place
 - 必须和可选参数。
 - X-CS-APIKEY： 即用户申请的API Key。
 - X-CS-EXPIRES：您发出请求的时间戳。如：1629291143107。
@@ -1727,7 +1727,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 </tbody></table>
 <h2 id='v2'><span id="2">获取当前订单V2</span></h2>
 <p>获取当前订单 V2 版本</p>
-<h4 id='api-https-futures-coinstore-com-apikey'>新接口的 API域名地址 <code>https://futures.coinstore.com</code>  调用支持ApiKey</h4><h3 id='http-8'>HTTP请求:</h3>
+<h3 id='http-8'>HTTP请求:</h3>
 <ul>
 <li>GET /api/v2/trade/order/active</li>
 </ul>
@@ -1930,7 +1930,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 </tbody></table>
 <h2 id='v2-2'><span id="2">获取订单信息V2</span></h2>
 <p>获取订单信息 V2 版本</p>
-<h4 id='api-https-futures-coinstore-com-apikey-2'>新接口的 API域名地址 <code>https://futures.coinstore.com</code>  调用支持ApiKey</h4><h3 id='http-9'>HTTP请求:</h3>
+<h3 id='http-9'>HTTP请求:</h3>
 <ul>
 <li>GET /api/v2/trade/order/orderInfo</li>
 </ul>
@@ -2782,7 +2782,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 </tbody></table>
 <h2 id='v2-3'><span id="4">获取用户全部成交V2</span></h2>
 <p>获取全部成交记录 V2 版本</p>
-<h4 id='api-https-futures-coinstore-com-apikey-3'>新接口的 API域名地址 <code>https://futures.coinstore.com</code>  调用支持ApiKey</h4><h3 id='http-15'>HTTP请求:</h3>
+<h3 id='http-15'>HTTP请求:</h3>
 <ul>
 <li>GET /api/v2/trade/order/queryHisMatch</li>
 </ul>
@@ -3692,8 +3692,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 </tbody></table>
 <h1 id='websocket'>Websocket行情数据</h1><h2 id='5ea2e0cde2'>简介</h2><h3 id='url'>接入URL</h3>
 <p><code>
-wss://ws-futures.coinstore.com/socket.io/?EIO=3&amp;transport=websocket
-</code></p>
+wss://ws-futures.coin8.co/socket.io/?version=1.0.0&amp;EIO=3&amp;transport=websocket</code></p>
 <h3 id='1da6708ecc'>鉴权</h3>
 <p>注：signature: 签名方式同restful</p>
 <div class="highlight"><pre class="highlight plaintext"><code>[
