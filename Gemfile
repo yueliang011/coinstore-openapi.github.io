@@ -2,6 +2,7 @@ ruby '>=2.3.1'
 source 'https://rubygems.org'
 
 # Middleman
+gem 'minitest', '~> 5.15'
 gem 'middleman', '~>4.3'
 gem 'middleman-syntax', '~> 3.2'
 gem 'middleman-autoprefixer', '~> 2.7'
