@@ -514,7 +514,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='45fa4e00db'>介绍</h1>
-<p>欢迎使用Coinstore开发者文档，此文档是Coinstore API的唯一官方文档。</p>
+<p>欢迎使用Coin8开发者文档，Coin8 API的唯一官方文档。</p>
 
 <p>本文档提供了相关API的使用方法介绍。</p>
 
@@ -522,7 +522,7 @@
 
 <p>Websocket则提供了行情相关的接口及推送服务。</p>
 
-<p>Coinstore API提供的服务会在此持续更新，请大家及时关注。</p>
+<p>Coin8 API提供的服务会在此持续更新，请大家及时关注。</p>
 <h1 id='9e033de16f'>快速开始</h1><h2 id='apikey'>创建APIkey</h2>
 <p>如需使用API，请先登录网页端，通过【用户中心】-【API管理】创建一个API key，再据此文档详情进行开发和交易。</p>
 
@@ -535,7 +535,7 @@
 <li><code>Secret Key</code> 签名认证加密所使用的密钥</li>
 </ul>
 <h2 id='5076603a3e'>接口类型</h2>
-<p>Coinstore为用户提供两种接口，您可根据自己的使用场景和偏好来选择适合的方式进行查询行情、交易。</p>
+<p>Coin8为用户提供两种接口，您可根据自己的使用场景和偏好来选择适合的方式进行查询行情、交易。</p>
 
 <p><strong>REST API</strong></p>
 
@@ -563,11 +563,11 @@
 <h2 id='urls'>接入URLs</h2>
 <p><strong>REST API</strong></p>
 
-<p><code>https://api.coinstore.com/api</code></p>
+<p><code>https://api.coin8.co/api/</code></p>
 
 <p><strong>WebSocket</strong></p>
 
-<p><code>wss://ws.coinstore.com/s/ws</code></p>
+<p><code>wss://ws.coin8.co/s/ws</code></p>
 
 <p>为保证API服务的稳定性，建议使用日本AWS云服务器进行访问。如使用中国大陆境内的客户端服务器，连接的稳定性将难以保证。</p>
 <h2 id='c1fd2fc5ac'>限频规则</h2>
@@ -632,19 +632,13 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <blockquote>
 <p>注意： key的值为第2步计算出来的哈希值。</p>
 </blockquote>
-
-<p><strong>Python示例</strong></p>
-
-<p>https://coinstore-sg-encryption.s3.ap-southeast-1.amazonaws.com/filesUpload/ex1/public/coinstore.py</p>
-
-<p><code>推荐python sdk使用3.9版本，使用如果版本低于3.9版本，可能会造成兼容性或者签名计算有误的情况。</code></p>
 <h1 id='api'>API接入说明</h1><h2 id='5b7654a66a'><span id="a3">请求格式</span></h2>
 <p>所有的API请求都是restful，目前只有两种方法：GET和POST。
 - GET请求：所有的参数都在路径参数里
 - POST请求: 路径里可以设置参数，参数可以以JSON格式发送在请求主体（body）里，没有参数的需要传{}</p>
 
 <p>一个合法的请求由以下几部分组成：
-- 方法请求地址：即访问服务器地址api.coinstore.com，比如https://api.coinstore.com/api/trade/order/place
+- 方法请求地址：即访问服务器地址api.coin8.co，比如https://api.coin8.co/api/trade/order/place
 - 必须和可选参数。
 - X-CS-APIKEY： 即用户申请的API Key。
 - X-CS-EXPIRES：您发出请求的时间戳。如：1629291143107。
@@ -854,7 +848,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/v2/public/config/spot/symbols"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/v2/public/config/spot/symbols"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -872,8 +866,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
  <span class="s">'exch-language'</span><span class="p">:</span> <span class="s">'en_US'</span><span class="p">,</span>
  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
  <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'*/*'</span><span class="p">,</span>
- <span class="c1"># 'Host': 'https://api.coinstore.com',
-</span> <span class="s">'Connection'</span><span class="p">:</span> <span class="s">'keep-alive'</span>
+ <span class="s">'Connection'</span><span class="p">:</span> <span class="s">'keep-alive'</span>
 <span class="p">}</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
@@ -1064,7 +1057,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 
 <span class="c1"># api查询币种信息
 </span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/fi/v1/common/currency?currencyCode=ETH"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/fi/v1/common/currency?currencyCode=ETH"</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1131,7 +1124,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/spot/accountList"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/spot/accountList"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1149,8 +1142,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
  <span class="s">'exch-language'</span><span class="p">:</span> <span class="s">'en_US'</span><span class="p">,</span>
  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
  <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'*/*'</span><span class="p">,</span>
- <span class="c1"># 'Host': 'https://api.coinstore.com',
-</span> <span class="s">'Connection'</span><span class="p">:</span> <span class="s">'keep-alive'</span>
+ <span class="s">'Connection'</span><span class="p">:</span> <span class="s">'keep-alive'</span>
 <span class="p">}</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
@@ -1332,7 +1324,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/fi/v3/asset/deposit/do"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/fi/v3/asset/deposit/do"</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1555,7 +1547,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/fi/v3/asset/deposit/record/list"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/fi/v3/asset/deposit/record/list"</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1799,7 +1791,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/fi/v3/asset/withdraw/record/list"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/fi/v3/asset/withdraw/record/list"</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1965,7 +1957,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/fi/v3/asset/doWithdraw"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/fi/v3/asset/doWithdraw"</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -2073,7 +2065,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/fi/v3/asset/cancelWithdraw"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/fi/v3/asset/cancelWithdraw"</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -2110,7 +2102,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='d9b723aa93'><span id="2">划转资产</span></h2>
 <p>划转用户资产</p>
-<h4 id='lt-gt-api-https-futures-api-coinstore-com-api-apikey'>目前支持合约&lt;一&gt;现货划转, API域名地址 <code>https://futures.api.coinstore.com/api</code>  调用支持ApiKey</h4><h3 id='http-9'>HTTP请求:</h3>
+<h4 id='lt-gt-api-https-futures-api-coin8-co-api-apikey'>目前支持合约&lt;一&gt;现货划转, API域名地址 <code>https://futures.api.coin8.co/api</code>  调用支持ApiKey</h4><h3 id='http-9'>HTTP请求:</h3>
 <ul>
 <li>POST /v1/future/transfer</li>
 </ul>
@@ -2211,7 +2203,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/v1/future/transfer"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/v1/future/transfer"</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -2301,7 +2293,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span> 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/order/active"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/trade/order/active"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span> 
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -2465,7 +2457,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 </tbody></table>
 <h2 id='v2'><span id="3">获取当前订单V2</span></h2>
 <p>获取当前订单 v2 版本</p>
-<h4 id='api-https-api-coinstore-com-apikey'>新接口的 API域名地址 <code>https://api.coinstore.com</code>  调用支持ApiKey</h4><h3 id='http-11'>HTTP请求:</h3>
+<h4 id='api-https-api-coin8-co-apikey'>新接口的 API域名地址 <code>https://api.coin8.co</code>  调用支持ApiKey</h4><h3 id='http-11'>HTTP请求:</h3>
 <ul>
 <li>GET /api/v2/trade/order/active</li>
 </ul>
@@ -2478,7 +2470,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/v2/trade/order/active"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/v2/trade/order/active"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>  
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -2667,7 +2659,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/match/accountMatches?symbol=tipusdt"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/trade/match/accountMatches?symbol=tipusdt"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -2896,7 +2888,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">json</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/order/cancel"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/trade/order/cancel"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -2999,7 +2991,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/order/cancelAll"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/trade/order/cancelAll"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -3019,7 +3011,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
  <span class="s">'exch-language'</span><span class="p">:</span> <span class="s">'en_US'</span><span class="p">,</span>
  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
  <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'*/*'</span><span class="p">,</span>
- <span class="c1"># 'Host': 'https://api.coinstore.com',
+ <span class="c1"># 'Host': 'https://api.coin8.co',
 </span> <span class="s">'Connection'</span><span class="p">:</span> <span class="s">'keep-alive'</span>
 <span class="p">}</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -3068,7 +3060,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 </tbody></table>
 <h2 id='df83685cc8'><span id="6">创建订单</span></h2>
 <p>创建订单</p>
-<h4 id='50-coinstore'>普通用户的账号同一时间只允许持有 50 笔活动委托，做市账号不受此限制。如果您是做市商但有账号未添加做市账号权限，请联系 Coinstore 交付部门。</h4>
+<h4 id='50-coin8'>普通用户的账号同一时间只允许持有 50 笔活动委托，做市账号不受此限制。如果您是做市商但有账号未添加做市账号权限，请联系 Coin8 交付部门。</h4>
 <blockquote>
 <p>请求体</p>
 </blockquote>
@@ -3090,7 +3082,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/order/place"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/trade/order/place"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -3115,7 +3107,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
  <span class="s">'exch-language'</span><span class="p">:</span> <span class="s">'en_US'</span><span class="p">,</span>
  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
  <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'*/*'</span><span class="p">,</span>
- <span class="c1"># 'Host': 'https://api.coinstore.com',
+ <span class="c1"># 'Host': 'https://api.coin8.co',
 </span> <span class="s">'Connection'</span><span class="p">:</span> <span class="s">'keep-alive'</span>
 <span class="p">}</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -3229,7 +3221,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 </tbody></table>
 <h2 id='77aaf08979'><span id="13">批量下单</span></h2>
 <p>批量下单</p>
-<h4 id='50-coinstore-2'>普通用户的账号同一时间只允许持有 50 笔活动委托，做市账号不受此限制。如果您是做市商但有账号未添加做市账号权限，请联系 Coinstore 交付部门。</h4>
+<h4 id='50-coin8-2'>普通用户的账号同一时间只允许持有 50 笔活动委托，做市账号不受此限制。如果您是做市商但有账号未添加做市账号权限，请联系 Coin8 交付部门。</h4>
 <blockquote>
 <p>请求体</p>
 </blockquote>
@@ -3261,7 +3253,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/order/placeBatch"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/trade/order/placeBatch"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -3296,7 +3288,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
  <span class="s">'exch-language'</span><span class="p">:</span> <span class="s">'en_US'</span><span class="p">,</span>
  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
  <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'*/*'</span><span class="p">,</span>
- <span class="c1"># 'Host': 'https://api.coinstore.com',
+ <span class="c1"># 'Host': 'https://api.coin8.co',
 </span> <span class="s">'Connection'</span><span class="p">:</span> <span class="s">'keep-alive'</span>
 <span class="p">}</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -3460,7 +3452,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">json</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/order/cancelBatch"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/trade/order/cancelBatch"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -3555,7 +3547,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/trade/order/orderInfo?ordId=1780715084580128"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/trade/order/orderInfo?ordId=1780715084580128"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -3743,7 +3735,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 </tbody></table>
 <h2 id='v2-2'><span id="15">获取订单信息V2</span></h2>
 <p>获取订单信息V2</p>
-<h4 id='api-https-api-coinstore-com-apikey-2'>新接口的 API域名地址 <code>https://api.coinstore.com</code>  调用支持ApiKey</h4><h3 id='http-19'>HTTP请求:</h3>
+<h4 id='api-https-api-coin8-co-apikey-2'>新接口的 API域名地址 <code>https://api.coin8.co</code>  调用支持ApiKey</h4><h3 id='http-19'>HTTP请求:</h3>
 <ul>
 <li>GET /api/v2/trade/order/orderInfo</li>
 </ul>
@@ -3756,7 +3748,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coinstore.com/api/v2/trade/order/orderInfo?ordId=1780715084580128"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.coin8.co/api/v2/trade/order/orderInfo?ordId=1780715084580128"</span>
 <span class="n">api_key</span><span class="o">=</span><span class="sa">b</span><span class="s">'your api_key'</span>
 <span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'your secret_key'</span>
 <span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span><span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -4557,7 +4549,7 @@ Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
 </tr>
 </tbody></table>
 <h1 id='websocket'>Websocket行情数据</h1><h2 id='36d1a17821'><strong>简介</strong></h2><h3 id='url'>接入URL</h3>
-<p>wss://ws.coinstore.com/s/ws</p>
+<p>wss://ws.coin8.co/s/ws</p>
 
 <ol>
 <li><p>所有wss接口的 baseurl为: wss://<a href="host:port">host:port</a>/s/ws</p></li>
