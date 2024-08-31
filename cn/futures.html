@@ -1,0 +1,4587 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Coinstore官方API文档</title>
+    <link href="../images/favicon-ab07c47e.ico" rel="icon" type="image/ico">
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../stylesheets/screen-3bdfd5ec.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-1afa28ad.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all-1decc47a.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="cn cn_futures" data-languages="[]">
+    <div class="header">
+      <img src="../images/logo-b34a5437.png" class="logo" alt="" />
+      <div class="tabs">
+        <ul>
+          <li class="">
+              <a href="index.html">
+                现货
+              </a>
+          </li>
+          <li class="active">
+            <a href="futures.html">
+              永续合约
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="lang">
+        <span>简体中文</span>
+        <img src="../images/down-c11a96e5.png" class="down" alt="" />
+        <ul class="lang-list">
+         <li class="active">
+            <a href="/cn">
+              简体中文
+            </a>
+         </li>
+         <li class="">
+            <a href="/en">
+              English
+            </a>
+         </li>
+        </ul>
+      </div>
+    </div>
+    <a href="#" id="nav-button">
+      <span>
+        <img src="../images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="搜索">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#45fa4e00db" class="toc-h1 toc-link" data-title="介绍">介绍</a>
+          </li>
+          <li>
+            <a href="#9e033de16f" class="toc-h1 toc-link" data-title="快速开始">快速开始</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#c1ae0a8486" class="toc-h2 toc-link" data-title="接入准备">接入准备</a>
+                  </li>
+                  <li>
+                    <a href="#5076603a3e" class="toc-h2 toc-link" data-title="接口类型">接口类型</a>
+                  </li>
+                  <li>
+                    <a href="#urls" class="toc-h2 toc-link" data-title="接入URLs">接入URLs</a>
+                  </li>
+                  <li>
+                    <a href="#586f3bcbf4" class="toc-h2 toc-link" data-title="签名认证"><span id="a4">签名认证</span></a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#api" class="toc-h1 toc-link" data-title="API接入说明">API接入说明</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#5b7654a66a" class="toc-h2 toc-link" data-title="请求格式"><span id="a3">请求格式</span></a>
+                  </li>
+                  <li>
+                    <a href="#3ee119c599" class="toc-h2 toc-link" data-title="返回格式"><span id="a3">返回格式</span></a>
+                  </li>
+                  <li>
+                    <a href="#a38a81c9d5" class="toc-h2 toc-link" data-title="错误信息">错误信息</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#41654e0268" class="toc-h1 toc-link" data-title="基础信息">基础信息</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#f7ef3ab8ca" class="toc-h2 toc-link" data-title="币种币对信息"><span id="1">币种币对信息</span></a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#2a0d0be224" class="toc-h1 toc-link" data-title="账户相关">账户相关</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#7c2f2901d7" class="toc-h2 toc-link" data-title="资产余额"><span id="1">资产余额</span></a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#7985d3eb44" class="toc-h1 toc-link" data-title="仓位相关">仓位相关</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#716dfaa4eb" class="toc-h2 toc-link" data-title="仓位查询"><span id="1">仓位查询</span></a>
+                  </li>
+                  <li>
+                    <a href="#b773f9957e" class="toc-h2 toc-link" data-title="调整保证金"><span id="1">调整保证金</span></a>
+                  </li>
+                  <li>
+                    <a href="#2e01aa3e57" class="toc-h2 toc-link" data-title="调整杠杆倍数"><span id="1">调整杠杆倍数</span></a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#96a5882bf8" class="toc-h1 toc-link" data-title="订单相关">订单相关</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#d92f5192e4" class="toc-h2 toc-link" data-title="创建订单"><span id="1">创建订单</span></a>
+                  </li>
+                  <li>
+                    <a href="#2152241f96" class="toc-h2 toc-link" data-title="获取当前订单"><span id="2">获取当前订单</span></a>
+                  </li>
+                  <li>
+                    <a href="#v2" class="toc-h2 toc-link" data-title="获取当前订单V2"><span id="2">获取当前订单V2</span></a>
+                  </li>
+                  <li>
+                    <a href="#v2-2" class="toc-h2 toc-link" data-title="获取订单信息V2"><span id="2">获取订单信息V2</span></a>
+                  </li>
+                  <li>
+                    <a href="#08819af8ba" class="toc-h2 toc-link" data-title="取消委托单"><span id="3">取消委托单</span></a>
+                  </li>
+                  <li>
+                    <a href="#caef340d80" class="toc-h2 toc-link" data-title="一键撤单"><span id="5">一键撤单</span></a>
+                  </li>
+                  <li>
+                    <a href="#77aaf08979" class="toc-h2 toc-link" data-title="批量下单"><span id="13">批量下单</span></a>
+                  </li>
+                  <li>
+                    <a href="#id" class="toc-h2 toc-link" data-title="根据订单id批量进行撤单"><span id="27">根据订单id批量进行撤单</span></a>
+                  </li>
+                  <li>
+                    <a href="#a14949562d" class="toc-h2 toc-link" data-title="获取用户全部成交"><span id="3">获取用户全部成交</span></a>
+                  </li>
+                  <li>
+                    <a href="#v2-3" class="toc-h2 toc-link" data-title="获取用户全部成交V2"><span id="4">获取用户全部成交V2</span></a>
+                  </li>
+                  <li>
+                    <a href="#274ba04bb9" class="toc-h2 toc-link" data-title="用户强减记录"><span id="3">用户强减记录</span></a>
+                  </li>
+                  <li>
+                    <a href="#db55aab9f9" class="toc-h2 toc-link" data-title="用户强平记录"><span id="3">用户强平记录</span></a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#43ee760de5" class="toc-h1 toc-link" data-title="行情相关">行情相关</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#k" class="toc-h2 toc-link" data-title="获取历史K线"><span id="7">获取历史K线</span></a>
+                  </li>
+                  <li>
+                    <a href="#0a8d744c83" class="toc-h2 toc-link" data-title="查询行情快照"><span id="7">查询行情快照</span></a>
+                  </li>
+                  <li>
+                    <a href="#1690314e40" class="toc-h2 toc-link" data-title="获取最新成交"><span id="7">获取最新成交</span></a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#websocket" class="toc-h1 toc-link" data-title="Websocket行情数据">Websocket行情数据</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#5ea2e0cde2" class="toc-h2 toc-link" data-title="简介">简介</a>
+                  </li>
+                  <li>
+                    <a href="#k-2" class="toc-h2 toc-link" data-title="获取K线">获取K线</a>
+                  </li>
+                  <li>
+                    <a href="#d07a7e664f" class="toc-h2 toc-link" data-title="获取逐笔成交">获取逐笔成交</a>
+                  </li>
+                  <li>
+                    <a href="#707972a6ed" class="toc-h2 toc-link" data-title="获取行情快照买卖档位">获取行情快照买卖档位</a>
+                  </li>
+                  <li>
+                    <a href="#e601062c77" class="toc-h2 toc-link" data-title="获取行情快照基础数据">获取行情快照基础数据</a>
+                  </li>
+                  <li>
+                    <a href="#8340d3206e" class="toc-h2 toc-link" data-title="获取私有数据">获取私有数据</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#e08c1d4f9a" class="toc-h1 toc-link" data-title="错误码">错误码</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#33c0874e49" class="toc-h2 toc-link" data-title="错误码:">错误码:</a>
+                  </li>
+              </ul>
+          </li>
+        <li class="create_api"><a target="_blank" href="https://www.coinstore.com/#/user/bindAuth/ManagementAPI">创建 API Key</a></li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='45fa4e00db'>介绍</h1>
+<p>欢迎使用Coinstore开发者文档，此文档是Coinstore API的唯一官方文档。</p>
+
+<p>本文档提供了相关API的使用方法介绍。</p>
+
+<p>RESTful API包含了资产，订单及行情等接口。</p>
+
+<p>Websocket则提供了行情相关的接口及推送服务。</p>
+
+<p>Coinstore API提供的服务会在此持续更新，请大家及时关注。</p>
+<h1 id='9e033de16f'>快速开始</h1><h2 id='c1ae0a8486'>接入准备</h2>
+<p>如需使用API，请先登录网页端，通过【用户中心】-【API管理】创建一个API key，再据此文档详情进行开发和交易。</p>
+
+<p>您可以点击 &#39;https://www.coinstore.com/#/user/bindAuth/ManagementAPI&#39; 创建 API Key。</p>
+
+<p>每个用户可创建5组API Key，每组API key可以绑定5个不同的IP地址。API key一旦绑定了IP地址，则只能从绑定的IP地址使用该API key调用API接口。出于安全考虑，强烈建议您为API key绑定相应的IP地址。</p>
+
+<p>创建成功后请务必记住以下信息：</p>
+
+<ul>
+<li><code>API Key</code>  API 访问密钥</li>
+<li><code>Secret Key</code> 签名认证加密所使用的密钥</li>
+</ul>
+<h2 id='5076603a3e'>接口类型</h2>
+<p>Coinstore为用户提供两种接口，您可根据自己的使用场景和偏好来选择适合的方式进行查询行情、交易。</p>
+
+<p><strong>REST API</strong></p>
+
+<p>REST，即Representational State Transfer的缩写，是一种流行的互联网传输架构。它具有结构清晰、符合标准、易于理解、扩展方便的，正得到越来越多网站的采用。其优点如右：</p>
+
+<ul>
+<li>在RESTful架构中，每一个URL代表一种资源；</li>
+<li>客户端和服务器之间，传递这种资源的某种表现层；</li>
+<li>客户端通过四个HTTP指令，对服务器端资源进行操作，实现“表现层状态转化”。 </li>
+</ul>
+
+<p>交易或资产等一次性操作，建议开发者使用REST API进行操作</p>
+
+<p><strong>WebSocket API</strong></p>
+
+<p>WebSocket是HTML5一种新的协议（Protocol）。它实现了客户端与服务器全双工通信，通过一次简单的握手就可以建立客户端和服务器连接，服务器可以根据业务规则主动推送信息给客户端。</p>
+
+<p>市场行情和买卖深度等信息，建议开发者使用WebSocket API进行获取。</p>
+<h3 id='2ac5e3c5f6'>接口鉴权</h3>
+<p>以上两种接口均包含公共接口和私有接口两种类型。</p>
+
+<p>公共接口可用于获取基础信息和行情数据。公共接口无需认证即可调用。</p>
+
+<p>私有接口可用于交易管理。每个私有请求必须使用您的API Key进行签名验证。</p>
+<h2 id='urls'>接入URLs</h2>
+<p><strong>REST API</strong></p>
+
+<p><code>https://futures.coinstore.com/api</code></p>
+
+<p><strong>WebSocket</strong></p>
+
+<p><code>wss://ws-futures.coinstore.com/socket.io/?EIO=3&amp;transport=websocket</code></p>
+
+<p>为保证API服务的稳定性，建议使用日本AWS云服务器进行访问。如使用中国大陆境内的客户端服务器，连接的稳定性将难以保证。</p>
+<h2 id='586f3bcbf4'><span id="a4">签名认证</span></h2>
+<p><strong>签名说明</strong></p>
+
+<p>API 请求在通过 internet 传输的过程中极有可能被篡改，为了确保请求未被更改，除公共接口（基础信息，行情数据）外的私有接口均必须使用您的 API Key 做签名认证，以校验参数或参数值在传输途中是否发生了更改。</p>
+
+<p><strong>签名算法</strong></p>
+
+<p>使用HmacSHA256哈希函数作为签名函数
+<code>
+Mac hmacSha256 = Mac.getInstance(&quot;HmacSHA256&quot;);
+</code></p>
+
+<p><strong>签名步骤</strong></p>
+
+<p>1、签名有效字符串为请求参数和请求体</p>
+
+<blockquote>
+<p>注意：请求参数和请求体不进行任何排序或者去除空格，直接拼接成字符串作为payload
+```
+实例1：GET请求查询字符串
+ ?symbol=aaaa88&amp;size=10
+ String payload = “symbol=aaaa88&amp;size=10”；</p>
+</blockquote>
+
+<p>实例2 :Post请求体
+ {&quot;symbol&quot;:&quot;aaaa88&quot;,&quot;side&quot;:&quot;SELL&quot;,&quot;ordType&quot;:&quot;LIMIT&quot;,&quot;ordPrice&quot;:2,&quot;ordQty&quot;:1,&quot;timestamp&quot;:1627384801051}
+ String payload = “{&quot;symbol&quot;:&quot;aaaa88&quot;,&quot;side&quot;:&quot;SELL&quot;,&quot;ordType&quot;:&quot;LIMIT&quot;,&quot;ordPrice&quot;:2,&quot;ordQty&quot;:1,
+ &quot;timestamp&quot;:1627384801051}”；</p>
+
+<p>实例3：混合请求
+ ?symbol=aaaa88&amp;size=10
+ {&quot;symbol&quot;:&quot;aaaa88&quot;,&quot;side&quot;:&quot;SELL&quot;,&quot;ordType&quot;:&quot;LIMIT&quot;,&quot;ordPrice&quot;:2,&quot;ordQty&quot;:1,&quot;timestamp&quot;:1627384801051}
+ String payload = “symbol=aaaa88&amp;size=10{&quot;symbol&quot;:&quot;aaaa88&quot;,&quot;side&quot;:&quot;SELL&quot;,&quot;ordType&quot;:&quot;LIMIT&quot;,&quot;ordPrice&quot;:2,&quot;ordQty&quot;:1,
+ &quot;timestamp&quot;:1627384801051}”；
+```
+2、使用签名函数对时间戳获得哈希值</p>
+
+<blockquote>
+<p>注意： X-CS-EXPIRES为13位时间戳，需要除以30000获取一个类时间戳，对其进行签名函数计算，获得函数值作为第三步的秘钥<br>
+<code>
+ String time = String.valueOf(X-CS-EXPIRES / 30_000);
+ hmacSha256.init(new SecretKeySpec(Secret_Key.getBytes(), &quot;HmacSHA256&quot;));
+ byte[] hash = hmacSha256.doFinal(time.getBytes());
+ String key = Hex.toHexString(hash);
+</code>
+3、使用签名函数对签名有效字符串获得哈希值</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code> hmacSha256.reset();
+ hmacSha256.init(new SecretKeySpec(key.getBytes(), "HmacSHA256"));
+ hash = hmacSha256.doFinal(payload.getBytes());
+ String sign= Hex.toHexString(hash);
+
+</code></pre></div><h1 id='api'>API接入说明</h1><h2 id='5b7654a66a'><span id="a3">请求格式</span></h2>
+<p>所有的API请求都是restful，目前只有两种方法：GET和POST。
+- GET请求：所有的参数都在路径参数里
+- POST请求: 路径里可以设置参数，参数可以以JSON格式发送在请求主体（body）里，没有参数的需要传{}</p>
+
+<p>一个合法的请求由以下几部分组成：
+- 方法请求地址：即访问服务器地址futures.coinstore.com，比如https://futures.coinstore.com/api/trade/order/place
+- 必须和可选参数。
+- X-CS-APIKEY： 即用户申请的API Key。
+- X-CS-EXPIRES：您发出请求的时间戳。如：1629291143107。
+- X-CS-SIGN：签名计算得出的字符串，用于确保签名有效和未被篡改。</p>
+
+<blockquote>
+<p>注意：X-CS-APIKEY ，X-CS-EXPIRES ，X-CS-SIGN 三个参数都在请求头中，另外需要设置&#39;Content-Type&#39;:&#39;application/json&#39;。</p>
+</blockquote>
+<h2 id='3ee119c599'><span id="a3">返回格式</span></h2>
+<p>所有的接口返回都是JSON格式。在JSON的第一层有3个字段code，msg和data。前两个字段表示请求状态和描述，实际的业务数据在data字段里。</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"suc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">per</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">nested</span><span class="w"> </span><span class="err">JSON</span><span class="w"> </span><span class="err">object</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>以下是一个返回格式的样例：</p>
+
+<table><thead>
+<tr>
+<th>字段</th>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0：成功，其他失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>状态或错误描述</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>业务数据</td>
+</tr>
+</tbody></table>
+<h2 id='a38a81c9d5'>错误信息</h2>
+<p><strong>HTTP状态码</strong></p>
+
+<p>HTTP常见的错误码如下：
+- 400 Bad Request – Invalid request forma 请求格式无效</p>
+
+<ul>
+<li><p>401 signature failed – Invalid API Key 无效的API Key</p></li>
+<li><p>404 service not found 没有找到请求</p></li>
+<li><p>429 too many visits 请求太频繁被系统限流</p></li>
+<li><p>500 internal server error – 服务器内部错误</p></li>
+</ul>
+
+<p><strong>业务状态码</strong></p>
+
+<p>如果失败，response msg 带有错误描述信息, 对应的状态码描述如下：</p>
+
+<table><thead>
+<tr>
+<th>状态码</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>成功</td>
+<td>code=0 成功， code &gt;0 失败</td>
+</tr>
+</tbody></table>
+<h1 id='41654e0268'>基础信息</h1><h2 id='f7ef3ab8ca'><span id="1">币种币对信息</span></h2>
+<p>获取币种币对信息</p>
+<h3 id='http'>HTTP请求:</h3>
+<ul>
+<li>GET /api/configs/public</li>
+</ul>
+
+<blockquote>
+<p>响应 </p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"contracts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100300034</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currencyId"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"baseAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"quoteAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"marginAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"tickSize"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"priceScale"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"maxOrderSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">20000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"minOrderSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"takerFeeRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0006</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"makerFeeRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00025</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"contractSize"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"minMaintRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.003</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fundingInterval"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"riskLimits"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"maxSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"maintRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.005</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"maxSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">80000</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"maintRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"maxSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"maintRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.025</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"maxSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"maintRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"maxSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"maintRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.12</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"maxSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000000</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"maintRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"maxSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000000</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"maintRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"maxSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">99999999</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"maintRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"currencyId"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"disableTransferIn"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"disableTransferOut"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='1f9ac54b15'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0：成功，其他失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>错误信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>业务数据</td>
+</tr>
+<tr>
+<td>- currencies</td>
+<td>List &lt;Currency&gt;</td>
+<td>币种列表</td>
+</tr>
+<tr>
+<td>- contracts</td>
+<td>List &lt;Contract&gt;</td>
+<td>币对列表</td>
+</tr>
+<tr>
+<td>- version</td>
+<td>Long</td>
+<td>版本号</td>
+</tr>
+</tbody></table>
+<h4 id='currency'>Currency</h4>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currencyId</td>
+<td>int</td>
+<td>币种id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>币种名称</td>
+</tr>
+<tr>
+<td>disableTransferIn</td>
+<td>boolean</td>
+<td>是否可以划转至合约  默认false 能划转</td>
+</tr>
+<tr>
+<td>disableTransferOut</td>
+<td>boolean</td>
+<td>是否可以划转至现货  默认false 能划转</td>
+</tr>
+</tbody></table>
+<h4 id='contract'>Contract</h4>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>int</td>
+<td>合约id</td>
+</tr>
+<tr>
+<td>currencyId</td>
+<td>int</td>
+<td>保证金货币id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>合约名称 BTCUSDT</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>String</td>
+<td>合约显示名称 BTC/USDT</td>
+</tr>
+<tr>
+<td>baseAsset</td>
+<td>String</td>
+<td>商品货币名称 BTC</td>
+</tr>
+<tr>
+<td>quoteAsset</td>
+<td>String</td>
+<td>计价货币名称 USDT</td>
+</tr>
+<tr>
+<td>marginAsset</td>
+<td>String</td>
+<td>保证金货币名称 USDT</td>
+</tr>
+<tr>
+<td>tickSize</td>
+<td>BigDecimal</td>
+<td>最小报价单位</td>
+</tr>
+<tr>
+<td>priceScale</td>
+<td>int</td>
+<td>价格精度</td>
+</tr>
+<tr>
+<td>maxOrderSize</td>
+<td>int</td>
+<td>单笔下单最大张数，默认0，无限制</td>
+</tr>
+<tr>
+<td>minOrderSize</td>
+<td>int</td>
+<td>单笔下单最小张数，默认0，无限制</td>
+</tr>
+<tr>
+<td>takerFeeRate</td>
+<td>BigDecimal</td>
+<td>Taker手续费率</td>
+</tr>
+<tr>
+<td>makerFeeRate</td>
+<td>BigDecimal</td>
+<td>Maker手续费率</td>
+</tr>
+<tr>
+<td>contractSize</td>
+<td>BigDecimal</td>
+<td>合约单位</td>
+</tr>
+<tr>
+<td>minMaintRate</td>
+<td>BigDecimal</td>
+<td>最小维持保证金率</td>
+</tr>
+<tr>
+<td>fundingInterval</td>
+<td>int</td>
+<td>互换频率 单位 秒</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>int</td>
+<td>排序权重  倒叙</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>String[]</td>
+<td>标签    mock, hot, new, ...</td>
+</tr>
+<tr>
+<td>riskLimits</td>
+<td>RiskLimit[]</td>
+<td>风险限额</td>
+</tr>
+</tbody></table>
+<h4 id='risklimit'>RiskLimit</h4>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>maxSize</td>
+<td>long</td>
+<td>风险限额张数</td>
+</tr>
+<tr>
+<td>maintRate</td>
+<td>BigDecimal</td>
+<td>维持保证金率</td>
+</tr>
+<tr>
+<td>leverage</td>
+<td>int</td>
+<td>杠杆倍数</td>
+</tr>
+</tbody></table>
+<h1 id='2a0d0be224'>账户相关</h1><h2 id='7c2f2901d7'><span id="1">资产余额</span></h2>
+<p>获取用户资产余额</p>
+<h3 id='http-2'>HTTP请求:</h3>
+<ul>
+<li>POST  /api/future/queryAvail</li>
+</ul>
+
+<blockquote>
+<p>响应 </p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"currencyId"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"totalBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"997901.568361825"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"997901.568361825"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"frozenForTrade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"initMargin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"frozenInitMargin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"closeProfitLoss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-121.3079"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dailyProfitLoss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"unRealizedProfit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accountEquity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"997901.568361825"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"leverLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"toBtc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100023</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accountEquityBigDecimal"</span><span class="p">:</span><span class="w"> </span><span class="mf">997901.568361825</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"availableBigDecimal"</span><span class="p">:</span><span class="w"> </span><span class="mf">997901.568361825</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='1f9ac54b15-2'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-2'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0：成功，其他失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>错误信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object []</td>
+<td>业务数据</td>
+</tr>
+<tr>
+<td>- currencyId</td>
+<td>string</td>
+<td>保证金id</td>
+</tr>
+<tr>
+<td>- totalBalance</td>
+<td>string</td>
+<td>总资产</td>
+</tr>
+<tr>
+<td>- available</td>
+<td>string</td>
+<td>可用资产</td>
+</tr>
+<tr>
+<td>- frozenForTrade</td>
+<td>string</td>
+<td>委托冻结资产</td>
+</tr>
+<tr>
+<td>- initMargin</td>
+<td>string</td>
+<td>已占用保证金</td>
+</tr>
+<tr>
+<td>- frozenInitMargin</td>
+<td>string</td>
+<td>委托冻结保证金</td>
+</tr>
+<tr>
+<td>- closeProfitLoss</td>
+<td>string</td>
+<td>已实现盈亏</td>
+</tr>
+<tr>
+<td>- dailyProfitLoss</td>
+<td>string</td>
+<td>当日已实现盈亏</td>
+</tr>
+<tr>
+<td>- closeProfitLoss</td>
+<td>string</td>
+<td>已实现盈亏</td>
+</tr>
+<tr>
+<td>- unRealizedProfit</td>
+<td>string</td>
+<td>未实现盈亏</td>
+</tr>
+<tr>
+<td>- accountEquity</td>
+<td>string</td>
+<td>净资产</td>
+</tr>
+<tr>
+<td>- leverLevel</td>
+<td>string</td>
+<td>整体杠杆水平</td>
+</tr>
+<tr>
+<td>- unRealizedProfit</td>
+<td>string</td>
+<td>未实现盈亏</td>
+</tr>
+<tr>
+<td>- toBtc</td>
+<td>string</td>
+<td>btc资产价值</td>
+</tr>
+<tr>
+<td>- accountId</td>
+<td>string</td>
+<td>账户id</td>
+</tr>
+<tr>
+<td>- accountType</td>
+<td>string</td>
+<td>账户类型  1  主账户</td>
+</tr>
+</tbody></table>
+<h1 id='7985d3eb44'>仓位相关</h1><h2 id='716dfaa4eb'><span id="1">仓位查询</span></h2>
+<p>查询用户合约仓位</p>
+<h3 id='http-3'>HTTP请求:</h3>
+<ul>
+<li>GET  /api/future/queryPosi</li>
+</ul>
+
+<blockquote>
+<p>响应 </p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"lastPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3140.3"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"markPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3140.2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"initMarginRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"posiQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100300027</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"marginType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100023</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.09855181610000241"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"openAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.12765"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"initMargin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.03315309"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"posiStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"closeProfitLoss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"maintainMarginRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.005"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"frozenCloseQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"frozenOpenQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contractUnit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"openPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3127.65"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"unRealizedProfit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-0.01255"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"liquidationPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15256.27"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"forwardCross"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"crossMargin"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"extraMargin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='1f9ac54b15-3'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-3'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0：成功，其他失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>错误信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object []</td>
+<td>业务数据</td>
+</tr>
+<tr>
+<td>- currencyId</td>
+<td>string</td>
+<td>保证金id</td>
+</tr>
+<tr>
+<td>- posiQty</td>
+<td>string</td>
+<td>持仓量，大于0多头，小于0空头</td>
+</tr>
+<tr>
+<td>- openAmt</td>
+<td>string</td>
+<td>开仓金额</td>
+</tr>
+<tr>
+<td>- initMargin</td>
+<td>string</td>
+<td>初始保证金</td>
+</tr>
+<tr>
+<td>- posiStatus</td>
+<td>string</td>
+<td>1正常，2等待强平</td>
+</tr>
+<tr>
+<td>- marginType</td>
+<td>string</td>
+<td>保证金类型，1全仓2逐仓</td>
+</tr>
+<tr>
+<td>- closeProfitLoss</td>
+<td>string</td>
+<td>已实现盈亏</td>
+</tr>
+<tr>
+<td>- initMarginRate</td>
+<td>string</td>
+<td>初始保证率</td>
+</tr>
+<tr>
+<td>- maintainMarginRate</td>
+<td>string</td>
+<td>维持保证金</td>
+</tr>
+<tr>
+<td>- frozenCloseQty</td>
+<td>string</td>
+<td>平仓委托冻结量</td>
+</tr>
+<tr>
+<td>- frozenOpenQty</td>
+<td>string</td>
+<td>开仓委托冻结量</td>
+</tr>
+<tr>
+<td>- extraMargin</td>
+<td>string</td>
+<td>额外保证金   deprecated</td>
+</tr>
+<tr>
+<td>- contractUnit</td>
+<td>string</td>
+<td>合约单位</td>
+</tr>
+<tr>
+<td>- openPrice</td>
+<td>string</td>
+<td>开仓均价</td>
+</tr>
+<tr>
+<td>- unRealizedProfit</td>
+<td>string</td>
+<td>未实现盈亏</td>
+</tr>
+<tr>
+<td>- liquidationPrice</td>
+<td>string</td>
+<td>预估强评价</td>
+</tr>
+<tr>
+<td>- lastPrice</td>
+<td>string</td>
+<td>最新成交价</td>
+</tr>
+<tr>
+<td>- markPrice</td>
+<td>string</td>
+<td>标记价格 * 持仓数量 * 合约面值</td>
+</tr>
+<tr>
+<td>- accountId</td>
+<td>string</td>
+<td>账户id</td>
+</tr>
+<tr>
+<td>- accountType</td>
+<td>string</td>
+<td>账户类型  1  主账户</td>
+</tr>
+</tbody></table>
+<h2 id='b773f9957e'><span id="1">调整保证金</span></h2><h3 id='http-4'>HTTP请求:</h3>
+<ul>
+<li>POST  /api/future/adjustMargin</li>
+</ul>
+
+<blockquote>
+<p>响应 </p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+</span></code></pre></div><h3 id='a526db39fb'>请求体</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>int</td>
+<td>Y</td>
+<td>交易对ID</td>
+</tr>
+<tr>
+<td>margin</td>
+<td>int</td>
+<td>Y</td>
+<td>保证金额（&gt;0 : 增加保证金，&lt;0 ：减少保证金）</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-4'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0：成功，其他失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>错误信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object []</td>
+<td>业务数据</td>
+</tr>
+</tbody></table>
+<h2 id='2e01aa3e57'><span id="1">调整杠杆倍数</span></h2><h3 id='http-5'>HTTP请求:</h3>
+<ul>
+<li>POST  /api/configs/adjustPositionConfig</li>
+</ul>
+
+<blockquote>
+<p>响应 </p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+</span></code></pre></div><h3 id='a526db39fb-2'>请求体</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>int</td>
+<td>Y</td>
+<td>交易对ID</td>
+</tr>
+<tr>
+<td>leverage</td>
+<td>int</td>
+<td>Y</td>
+<td>杠杆倍数, 0为自动模式  逐仓 不能为0</td>
+</tr>
+<tr>
+<td>isolated</td>
+<td>boolean</td>
+<td>Y</td>
+<td>保证金类型 默认 false全仓 true逐仓</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-5'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0：成功，其他失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>错误信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object []</td>
+<td>业务数据</td>
+</tr>
+</tbody></table>
+<h1 id='96a5882bf8'>订单相关</h1><h2 id='d92f5192e4'><span id="1">创建订单</span></h2>
+<p>创建订单</p>
+<h3 id='http-6'>HTTP请求:</h3>
+<ul>
+<li>POST /api/trade/order/place</li>
+</ul>
+<h3 id='1f9ac54b15-4'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accountType</td>
+<td>int</td>
+<td>N</td>
+<td>账号类型</td>
+</tr>
+<tr>
+<td>clientOrderId</td>
+<td>string</td>
+<td>N</td>
+<td>客户端委托ID,如果不传使用uuid</td>
+</tr>
+<tr>
+<td>contractId</td>
+<td>int</td>
+<td>Y</td>
+<td>合约ID</td>
+</tr>
+<tr>
+<td>marginRate</td>
+<td>string</td>
+<td>Y</td>
+<td>保证金率,marginRate=1/leverage 范围:0-1</td>
+</tr>
+<tr>
+<td>leverage</td>
+<td>int</td>
+<td>Y</td>
+<td>保证金倍数</td>
+</tr>
+<tr>
+<td>marginType</td>
+<td>int</td>
+<td>Y</td>
+<td>保证金类型，全仓1，逐仓2</td>
+</tr>
+<tr>
+<td>orderSubType</td>
+<td>int</td>
+<td>Y</td>
+<td>0（默认值），1（被动委托），2（最近价触发条件委托），3（指数触发条件委托），4（标记价触发条件委托）</td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>int</td>
+<td>Y</td>
+<td>委托类型，1（限价），3（市价）</td>
+</tr>
+<tr>
+<td>positionEffect</td>
+<td>int</td>
+<td>Y</td>
+<td>开平标志，开仓1，平仓2  平仓单必须传2</td>
+</tr>
+<tr>
+<td>price</td>
+<td>string</td>
+<td>N</td>
+<td>委托价格,order_type等于3（市价）时非必填</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>string</td>
+<td>Y</td>
+<td>委托数量</td>
+</tr>
+<tr>
+<td>side</td>
+<td>int</td>
+<td>Y</td>
+<td>买1，卖-1</td>
+</tr>
+<tr>
+<td>stopPrice</td>
+<td>string</td>
+<td>optional</td>
+<td>止损价格，order_type等于3（市价）时非必填 //条件单时</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1712040078475777"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='2213f4c32f-6'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0：成功，其他失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>错误信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>string</td>
+<td>订单id</td>
+</tr>
+</tbody></table>
+<h2 id='2152241f96'><span id="2">获取当前订单</span></h2>
+<p>获取当前订单</p>
+<h3 id='http-7'>HTTP请求:</h3>
+<ul>
+<li>GET /api/trade/order/active</li>
+</ul>
+
+<blockquote>
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"initMarginRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100280034</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"marginType"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"stopPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderSubType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"positionEffect"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100023</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1712035767779585"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timeInForce"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contractUnit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"applId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"clOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c07fb0395d304590ac9277b71741aeaf"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1632724540258000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"matchQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"matchAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cancelQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"matchTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"feeRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00025"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"avgPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fcOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"stopCondition"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"minimalQuantity"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='1f9ac54b15-5'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-7'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td></td>
+</tr>
+<tr>
+<td>- accountType</td>
+<td>int</td>
+<td>账号类型</td>
+</tr>
+<tr>
+<td>- clientOrderId</td>
+<td>string</td>
+<td>客户端委托ID,如果不传使用uuid</td>
+</tr>
+<tr>
+<td>- contractId</td>
+<td>int</td>
+<td>合约ID</td>
+</tr>
+<tr>
+<td>- initMarginRate</td>
+<td>string</td>
+<td>保证金率，全仓时&gt;0，逐仓时&gt;0</td>
+</tr>
+<tr>
+<td>- marginType</td>
+<td>int</td>
+<td>保证金类型，全仓1，逐仓2</td>
+</tr>
+<tr>
+<td>- minimalQuantity</td>
+<td>string</td>
+<td>最新成交数量，order_type等于3（市价）时非必填//前端不传</td>
+</tr>
+<tr>
+<td>- orderSubType</td>
+<td>int</td>
+<td>0（默认值），1（被动委托），2（最近价触发条件委托），3（指数触发条件委托），4（标记价触发条件委托）</td>
+</tr>
+<tr>
+<td>- orderType</td>
+<td>int</td>
+<td>委托类型，1（限价），3（市价）</td>
+</tr>
+<tr>
+<td>- positionEffect</td>
+<td>int</td>
+<td>开平标志，开仓1，平仓2</td>
+</tr>
+<tr>
+<td>- orderPrice</td>
+<td>string</td>
+<td>委托价格,order_type等于3（市价）时非必填</td>
+</tr>
+<tr>
+<td>- orderQty</td>
+<td>string</td>
+<td>委托数量</td>
+</tr>
+<tr>
+<td>- side</td>
+<td>int</td>
+<td>买1，卖-1</td>
+</tr>
+<tr>
+<td>- stopCondition</td>
+<td>int</td>
+<td>止损,order_type等于3（市价）时非必填；值域：1（止盈，未启用），2（止损，未启用），3（只减仓，未启用） //前端不传</td>
+</tr>
+<tr>
+<td>- stopPrice</td>
+<td>string</td>
+<td>止损价格，order_type等于3（市价）时非必填 //条件单时</td>
+</tr>
+<tr>
+<td>- symbol</td>
+<td>string</td>
+<td>合约名称</td>
+</tr>
+</tbody></table>
+<h2 id='v2'><span id="2">获取当前订单V2</span></h2>
+<p>获取当前订单 V2 版本</p>
+<h4 id='api-https-futures-coinstore-com-apikey'>新接口的 API域名地址 <code>https://futures.coinstore.com</code>  调用支持ApiKey</h4><h3 id='http-8'>HTTP请求:</h3>
+<ul>
+<li>GET /api/v2/trade/order/active</li>
+</ul>
+
+<blockquote>
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"orderStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"avgPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"matchQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"matchAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timeInForce"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"clOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1626933997000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"positionEffect"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"marginType"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"stopCondition"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderSubType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"marginLeverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"remainQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1626933997312000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"stopPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"initMarginRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1705963943362561"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2902104</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">29475591730</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='1f9ac54b15-6'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>int</td>
+<td>N</td>
+<td>合约id</td>
+</tr>
+<tr>
+<td>ordId</td>
+<td>int</td>
+<td>N</td>
+<td>委托ID</td>
+</tr>
+<tr>
+<td>clOrdId</td>
+<td>String</td>
+<td>N</td>
+<td>客户端委托ID</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-8'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td></td>
+</tr>
+<tr>
+<td>- accountType</td>
+<td>int</td>
+<td>账户类型 1：user 2:system 3:bonus  4:follow</td>
+</tr>
+<tr>
+<td>- contractId</td>
+<td>int</td>
+<td>合约ID</td>
+</tr>
+<tr>
+<td>- orderId</td>
+<td>long</td>
+<td>委托ID</td>
+</tr>
+<tr>
+<td>- clOrderId</td>
+<td>string</td>
+<td>客户端委托ID</td>
+</tr>
+<tr>
+<td>- orderStatus</td>
+<td>int</td>
+<td>委托状态 0：未申报 1:正在申报 2:已申报未成交 3:部分成交 4: 全部成交 5：部分撤单 6： 全部撤单 7:撤单中 8:失效</td>
+</tr>
+<tr>
+<td>- timeInForce</td>
+<td>int</td>
+<td>成交限制类型：1:GTC, 2:IOC, 3:FOK</td>
+</tr>
+<tr>
+<td>- initMarginRate</td>
+<td>string</td>
+<td>保证金率</td>
+</tr>
+<tr>
+<td>- marginLeverage</td>
+<td>int</td>
+<td>保证金倍数</td>
+</tr>
+<tr>
+<td>- marginType</td>
+<td>int</td>
+<td>保证金类型，全仓1，逐仓2</td>
+</tr>
+<tr>
+<td>- orderType</td>
+<td>int</td>
+<td>委托类型 1：LIMIT  2：条件单限价  3：MARKET  4：条件单市价</td>
+</tr>
+<tr>
+<td>- orderSubType</td>
+<td>int</td>
+<td>0（默认值），1（被动委托），2（最近价触发条件委托），3（指数触发条件委托），4（标记价触发条件委托）</td>
+</tr>
+<tr>
+<td>- positionEffect</td>
+<td>int</td>
+<td>开平标志，开仓1，平仓2</td>
+</tr>
+<tr>
+<td>- orderPrice</td>
+<td>string</td>
+<td>委托价格：委托价格,order_type等于3（市价）时非必填</td>
+</tr>
+<tr>
+<td>- orderQty</td>
+<td>string</td>
+<td>委托数量</td>
+</tr>
+<tr>
+<td>- side</td>
+<td>int</td>
+<td>方向 1：做多  -1：做空</td>
+</tr>
+<tr>
+<td>- stopCondition</td>
+<td>int</td>
+<td>止损,order_type等于3（市价）时非必填；值域：1（止盈，未启用），2（止损，未启用），3（只减仓，未启用） //前端不传</td>
+</tr>
+<tr>
+<td>- stopPrice</td>
+<td>string</td>
+<td>止损价格，order_type等于3（市价）时非必填 //条件单时</td>
+</tr>
+<tr>
+<td>- matchQty</td>
+<td>string</td>
+<td>累积成交数量</td>
+</tr>
+<tr>
+<td>- matchAmt</td>
+<td>string</td>
+<td>累积成交金额</td>
+</tr>
+<tr>
+<td>- avgPrice</td>
+<td>String</td>
+<td>成交均价</td>
+</tr>
+<tr>
+<td>- remainQty</td>
+<td>int</td>
+<td>剩余数量</td>
+</tr>
+<tr>
+<td>- orderTime</td>
+<td>long</td>
+<td>委托时间</td>
+</tr>
+</tbody></table>
+<h2 id='v2-2'><span id="2">获取订单信息V2</span></h2>
+<p>获取订单信息 V2 版本</p>
+<h4 id='api-https-futures-coinstore-com-apikey-2'>新接口的 API域名地址 <code>https://futures.coinstore.com</code>  调用支持ApiKey</h4><h3 id='http-9'>HTTP请求:</h3>
+<ul>
+<li>GET /api/v2/trade/order/orderInfo</li>
+</ul>
+
+<blockquote>
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100100001</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1736859343912961</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"clOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZznkeIhHR4yEHmAUF0J6wA#1018"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timeInForce"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"marginLeverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"marginType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"positionEffect"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7134"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"stopCondition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"stopPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"matchQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"matchAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"avgPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"remainQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"profitAndLoss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"feeCurrencyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderUpdateTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1656398147046</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"orderTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1656398147046</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='1f9ac54b15-7'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ordId</td>
+<td>int</td>
+<td>N</td>
+<td>委托ID</td>
+</tr>
+<tr>
+<td>clOrdId</td>
+<td>String</td>
+<td>N</td>
+<td>客户端委托ID</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-9'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>list</td>
+<td></td>
+</tr>
+<tr>
+<td>- accountType</td>
+<td>int</td>
+<td>账户类型 1：user 2:system 3:bonus  4:follow</td>
+</tr>
+<tr>
+<td>- contractId</td>
+<td>int</td>
+<td>合约ID</td>
+</tr>
+<tr>
+<td>- orderId</td>
+<td>long</td>
+<td>委托ID</td>
+</tr>
+<tr>
+<td>- clOrderId</td>
+<td>string</td>
+<td>客户端委托ID</td>
+</tr>
+<tr>
+<td>- orderStatus</td>
+<td>int</td>
+<td>委托状态 0：未申报 1:正在申报 2:已申报未成交 3:部分成交 4: 全部成交 5：部分撤单 6： 全部撤单 7:撤单中 8:失效</td>
+</tr>
+<tr>
+<td>- timeInForce</td>
+<td>int</td>
+<td>成交限制类型：1:GTC, 2:IOC, 3:FOK</td>
+</tr>
+<tr>
+<td>- marginLeverage</td>
+<td>int</td>
+<td>保证金倍数</td>
+</tr>
+<tr>
+<td>- marginType</td>
+<td>int</td>
+<td>保证金类型，全仓1，逐仓2</td>
+</tr>
+<tr>
+<td>- orderType</td>
+<td>int</td>
+<td>委托类型 1：LIMIT  2：条件单限价  3：MARKET  4：条件单市价</td>
+</tr>
+<tr>
+<td>- positionEffect</td>
+<td>int</td>
+<td>开平标志，开仓1，平仓2</td>
+</tr>
+<tr>
+<td>- orderPrice</td>
+<td>string</td>
+<td>委托价格：委托价格,order_type等于3（市价）时非必填</td>
+</tr>
+<tr>
+<td>- orderQty</td>
+<td>string</td>
+<td>委托数量</td>
+</tr>
+<tr>
+<td>- side</td>
+<td>int</td>
+<td>方向 1：做多  -1：做空</td>
+</tr>
+<tr>
+<td>- stopCondition</td>
+<td>string</td>
+<td>止损,order_type等于3（市价）时非必填；值域：1（止盈，未启用），2（止损，未启用），3（只减仓，未启用） //前端不传</td>
+</tr>
+<tr>
+<td>- stopPrice</td>
+<td>string</td>
+<td>止损价格，order_type等于3（市价）时非必填 //条件单时</td>
+</tr>
+<tr>
+<td>- matchQty</td>
+<td>string</td>
+<td>累积成交数量</td>
+</tr>
+<tr>
+<td>- matchAmt</td>
+<td>string</td>
+<td>累积成交金额</td>
+</tr>
+<tr>
+<td>- avgPrice</td>
+<td>String</td>
+<td>成交均价</td>
+</tr>
+<tr>
+<td>- remainQty</td>
+<td>string</td>
+<td>剩余数量</td>
+</tr>
+<tr>
+<td>- profitAndLoss</td>
+<td>String</td>
+<td>盈亏</td>
+</tr>
+<tr>
+<td>- fee</td>
+<td>String</td>
+<td>累计手续费</td>
+</tr>
+<tr>
+<td>- feeCurrencyName</td>
+<td>String</td>
+<td>交易手续费币种</td>
+</tr>
+<tr>
+<td>- orderUpdateTime</td>
+<td>long</td>
+<td>订单状态更新时间：若未成交，则系统返回“订单创建时间”；若已成交，则系统返回最近一笔成交的时间</td>
+</tr>
+<tr>
+<td>- orderTime</td>
+<td>long</td>
+<td>委托时间</td>
+</tr>
+</tbody></table>
+<h2 id='08819af8ba'><span id="3">取消委托单</span></h2>
+<p>取消委托单</p>
+<h3 id='http-10'>HTTP请求:</h3>
+<ul>
+<li>POST /api/trade/order/cancel</li>
+</ul>
+<h3 id='1f9ac54b15-8'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>int</td>
+<td>Y</td>
+<td>合约号</td>
+</tr>
+<tr>
+<td>originalOrderId</td>
+<td>long</td>
+<td>Y</td>
+<td>原始委托号sb</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancel order success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='2213f4c32f-10'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0：成功，其他失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>错误信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>string</td>
+<td>返回数据</td>
+</tr>
+</tbody></table>
+<h2 id='caef340d80'><span id="5">一键撤单</span></h2><h3 id='http-11'>HTTP请求:</h3>
+<ul>
+<li>POST /api/trade/order/cancelAll</li>
+</ul>
+<h3 id='1f9ac54b15-9'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>int</td>
+<td>N</td>
+<td>不传撤销所有币对订单</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancel all order success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='2213f4c32f-11'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0：成功，其他失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>错误信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>string</td>
+<td>返回数据</td>
+</tr>
+</tbody></table>
+<h2 id='77aaf08979'><span id="13">批量下单</span></h2>
+<p>批量下单</p>
+<h3 id='http-12'>HTTP请求:</h3>
+<ul>
+<li>POST /api/trade/order/placeBatch</li>
+</ul>
+<h3 id='1f9ac54b15-10'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orders</td>
+<td>list</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>- clientOrderId</td>
+<td>string</td>
+<td>N</td>
+<td>客户端委托ID,如果不传使用uuid</td>
+</tr>
+<tr>
+<td>- contractId</td>
+<td>int</td>
+<td>Y</td>
+<td>合约ID</td>
+</tr>
+<tr>
+<td>- initRate</td>
+<td>string</td>
+<td>Y</td>
+<td>保证金率,保证金率=1/leverage</td>
+</tr>
+<tr>
+<td>- marginType</td>
+<td>int</td>
+<td>Y</td>
+<td>保证金类型，全仓1，逐仓2</td>
+</tr>
+<tr>
+<td>- orderSubType</td>
+<td>int</td>
+<td>Y</td>
+<td>0（默认值），1（被动委托）</td>
+</tr>
+<tr>
+<td>- orderType</td>
+<td>int</td>
+<td>Y</td>
+<td>委托类型，1（限价），3（市价）</td>
+</tr>
+<tr>
+<td>- positionEffect</td>
+<td>int</td>
+<td>Y</td>
+<td>开平标志，开仓1，平仓2  平仓单必须传2</td>
+</tr>
+<tr>
+<td>- orderPrice</td>
+<td>string</td>
+<td>N</td>
+<td>委托价格,order_type等于3（市价）时非必填</td>
+</tr>
+<tr>
+<td>- orderQty</td>
+<td>string</td>
+<td>Y</td>
+<td>委托数量</td>
+</tr>
+<tr>
+<td>- side</td>
+<td>int</td>
+<td>Y</td>
+<td>买1，卖-1</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>body
+<code>json
+{&quot;orders&quot;:[{
+  &quot;contractId&quot;: 100280034,
+  &quot;side&quot;: 1,
+  &quot;orderType&quot;: 1,
+  &quot;orderPrice&quot;: &quot;1&quot;,
+  &quot;orderQty&quot;: &quot;1&quot;,
+  &quot;positionEffect&quot;: 1,
+  &quot;marginType&quot;: 1,
+  &quot;initRate&quot;: 0,
+  &quot;orderSubType&quot;: 0
+},{
+  &quot;contractId&quot;: 100280034,
+  &quot;side&quot;: 1,
+  &quot;orderType&quot;: 1,
+  &quot;orderPrice&quot;: &quot;1&quot;,
+  &quot;orderQty&quot;: &quot;1&quot;,
+  &quot;positionEffect&quot;: 1,
+  &quot;marginType&quot;: 1,
+  &quot;initRate&quot;: 0,
+  &quot;orderSubType&quot;: 0
+}]}
+</code></p>
+
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"reject"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"succ"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"91642986-bccd-4980-9946-326c509f9715"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"1712125158883589"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"eb83d3b4-dd6a-4699-be1c-8a5403a8a884"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"1712125158883590"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='2213f4c32f-12'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0：成功，其他失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>错误信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>返回数据</td>
+</tr>
+<tr>
+<td>- reject</td>
+<td>Object[]</td>
+<td>失败订单  [客户端委托ID,错误code]</td>
+</tr>
+<tr>
+<td>- succ</td>
+<td>Object[]</td>
+<td>成功订单     [客户端委托ID,订单id]</td>
+</tr>
+</tbody></table>
+<h2 id='id'><span id="27">根据订单id批量进行撤单</span></h2>
+<p>根据订单id批量进行撤单</p>
+<h3 id='http-13'>HTTP请求:</h3>
+<ul>
+<li>POST /api/trade/orders/del</li>
+</ul>
+<h3 id='1f9ac54b15-11'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cancels</td>
+<td>list</td>
+<td>Y</td>
+<td></td>
+</tr>
+<tr>
+<td>- originalOrderId</td>
+<td>string</td>
+<td>Y</td>
+<td>客户端委托ID,如果不传使用uuid</td>
+</tr>
+<tr>
+<td>- contractId</td>
+<td>int</td>
+<td>Y</td>
+<td>合约ID</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>body
+<code>json
+{&quot;cancels&quot;:[{
+  &quot;contractId&quot;: 100280034,
+  &quot;originalOrderId&quot;: 1712125303587721
+},{
+  &quot;contractId&quot;: 100280034,
+  &quot;originalOrderId&quot;: 1712125303587722
+}
+]}
+</code></p>
+
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"reject"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"1019"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"1712125303587721"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"1019"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"1712125303587722"</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"succ"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">[</span><span class="w">
+                </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"1712125303587722"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="w">
+                </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"1712125303587721"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='2213f4c32f-13'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>正常返回信息</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>错误信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>-succ</td>
+<td>Object[]</td>
+<td>成功的订单id集合         [客户端委托ID,订单id]</td>
+</tr>
+<tr>
+<td>-reject</td>
+<td>Object[]</td>
+<td>失败的订单id集合        [客户端委托ID,错误code,订单id]</td>
+</tr>
+</tbody></table>
+<h2 id='a14949562d'><span id="3">获取用户全部成交</span></h2>
+<p>获取全部成交记录</p>
+<h3 id='http-14'>HTTP请求:</h3>
+<ul>
+<li>GET /api/future/queryHisMatch</li>
+</ul>
+
+<blockquote>
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"applId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"askFee"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"askInitRate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"askMarginType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"askMatchType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"askOrderId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"askPnl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"askPnlType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"askPositionEffect"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"askUserId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bidFee"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bidInitRate"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bidMarginType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bidMatchType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bidOrderId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bidPnl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bidPnlType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bidPositionEffect"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bidUserId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bonusAccountType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contractId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"execId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"matchAmt"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"matchPrice"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"matchQty"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"matchTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"takerSide"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='1f9ac54b15-12'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>int</td>
+<td>N</td>
+<td>合约id</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>string</td>
+<td>N</td>
+<td>结束时间</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>string</td>
+<td>N</td>
+<td>开始时间</td>
+</tr>
+<tr>
+<td>pageNum</td>
+<td>string</td>
+<td>N</td>
+<td>页数</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>string</td>
+<td>N</td>
+<td>每页数量</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>N</td>
+<td>方向 -1上一页 1下一页</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-14'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>- applId</td>
+<td>int</td>
+<td>期货ID,2</td>
+</tr>
+<tr>
+<td>- matchTime</td>
+<td>Long</td>
+<td>成交时间</td>
+</tr>
+<tr>
+<td>- contractId</td>
+<td>Long</td>
+<td>交易对ID、合约号</td>
+</tr>
+<tr>
+<td>- execId</td>
+<td>Long</td>
+<td>成交编号</td>
+</tr>
+<tr>
+<td>- bidUserId</td>
+<td>Long</td>
+<td>买方账号ID</td>
+</tr>
+<tr>
+<td>- askUserId</td>
+<td>Long</td>
+<td>卖方账号ID</td>
+</tr>
+<tr>
+<td>- bidOrderId</td>
+<td>Long</td>
+<td>买方委托号</td>
+</tr>
+<tr>
+<td>- askOrderId</td>
+<td>Long</td>
+<td>卖方委托号</td>
+</tr>
+<tr>
+<td>- matchPrice</td>
+<td>Double</td>
+<td>成交价</td>
+</tr>
+<tr>
+<td>- matchQty</td>
+<td>int</td>
+<td>成交数量</td>
+</tr>
+<tr>
+<td>- matchAmt</td>
+<td>Double</td>
+<td>成交金额</td>
+</tr>
+<tr>
+<td>- bidFee</td>
+<td>Double</td>
+<td>买方手续费</td>
+</tr>
+<tr>
+<td>- askFee</td>
+<td>Double</td>
+<td>卖方手续费</td>
+</tr>
+<tr>
+<td>- takerSide</td>
+<td>int</td>
+<td>Taker方向,1: 买方吃单，-1：卖方吃单</td>
+</tr>
+<tr>
+<td>- side</td>
+<td>int</td>
+<td>买卖方向</td>
+</tr>
+<tr>
+<td>- updateTime</td>
+<td>Long</td>
+<td>最近更新时间</td>
+</tr>
+<tr>
+<td>- bidPositionEffect</td>
+<td>int</td>
+<td>买方开平标志</td>
+</tr>
+<tr>
+<td>- askPositionEffect</td>
+<td>int</td>
+<td>卖方开平标志</td>
+</tr>
+<tr>
+<td>- bidMarginType</td>
+<td>int</td>
+<td>买方保证金类型</td>
+</tr>
+<tr>
+<td>- askMarginType</td>
+<td>int</td>
+<td>卖方保证金类型</td>
+</tr>
+<tr>
+<td>- bidInitRate</td>
+<td>Double</td>
+<td>买方初始保证金率</td>
+</tr>
+<tr>
+<td>- askInitRate</td>
+<td>Double</td>
+<td>卖方初始保证金率</td>
+</tr>
+<tr>
+<td>- bidMatchType</td>
+<td>int</td>
+<td>买方成交类型：0普通成交1强平成交2强减成交（破产方）3强减</td>
+</tr>
+<tr>
+<td>- askMatchType</td>
+<td>int</td>
+<td>卖方成交类型：0普通成交1强平成交2强减成交（破产方）3强减</td>
+</tr>
+<tr>
+<td>- bidPnlType</td>
+<td>int</td>
+<td>买方盈亏类型：0正常成交1正常平仓2强平3强减</td>
+</tr>
+<tr>
+<td>- bidPnl</td>
+<td>Double</td>
+<td>买方平仓盈亏</td>
+</tr>
+<tr>
+<td>- askPnlType</td>
+<td>int</td>
+<td>卖方盈亏类型：0正常成交1正常平仓2强平3强减</td>
+</tr>
+<tr>
+<td>- askPnl</td>
+<td>Double</td>
+<td>卖方平仓盈亏</td>
+</tr>
+</tbody></table>
+<h2 id='v2-3'><span id="4">获取用户全部成交V2</span></h2>
+<p>获取全部成交记录 V2 版本</p>
+<h4 id='api-https-futures-coinstore-com-apikey-3'>新接口的 API域名地址 <code>https://futures.coinstore.com</code>  调用支持ApiKey</h4><h3 id='http-15'>HTTP请求:</h3>
+<ul>
+<li>GET /api/v2/trade/order/queryHisMatch</li>
+</ul>
+
+<blockquote>
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3431</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100300144</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1762426675003393</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c819f4d2282f486d9ed4711327d6381e"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"matchId"</span><span class="p">:</span><span class="w"> </span><span class="mi">10763</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2177</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"execSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"matchAmt"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.672000000000000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"avgPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">112.000000000000000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orderStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orderRole"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAKER"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"remainingSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pnl"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.000168</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"matchTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1680781089260</span><span class="w">
+  </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='1f9ac54b15-13'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>int</td>
+<td>N</td>
+<td>合约id</td>
+</tr>
+<tr>
+<td>ordId</td>
+<td>int</td>
+<td>N</td>
+<td>委托ID</td>
+</tr>
+<tr>
+<td>pageNum</td>
+<td>string</td>
+<td>N</td>
+<td>页数，如果不传参，则默认返回 1 页</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>string</td>
+<td>N</td>
+<td>每页数量，默认20</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>N</td>
+<td>方向 -1做空 1做多</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-15'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>- accountId</td>
+<td>int</td>
+<td>账户id</td>
+</tr>
+<tr>
+<td>- contractId</td>
+<td>long</td>
+<td>交易对ID、合约号</td>
+</tr>
+<tr>
+<td>- orderId</td>
+<td>Long</td>
+<td>委托ID</td>
+</tr>
+<tr>
+<td>- clOrdId</td>
+<td>string</td>
+<td>客户端委托ID</td>
+</tr>
+<tr>
+<td>- matchId</td>
+<td>Long</td>
+<td>撮合ID</td>
+</tr>
+<tr>
+<td>- tradeId</td>
+<td>Long</td>
+<td>成交ID</td>
+</tr>
+<tr>
+<td>- execSize</td>
+<td>int</td>
+<td>成交数量</td>
+</tr>
+<tr>
+<td>- matchAmt</td>
+<td>Double</td>
+<td>成交金额</td>
+</tr>
+<tr>
+<td>- avgPrice</td>
+<td>Double</td>
+<td>成交均价</td>
+</tr>
+<tr>
+<td>- orderStatus</td>
+<td>int</td>
+<td>委托状态 0：未申报 1:正在申报 2:已申报未成交 3:部分成交 4: 全部成交 5：部分撤单 6： 全部撤单 7:撤单中 8:失效</td>
+</tr>
+<tr>
+<td>- orderRole</td>
+<td>string</td>
+<td>角色：Taker,Maker</td>
+</tr>
+<tr>
+<td>- remainingSize</td>
+<td>int</td>
+<td>剩余数量</td>
+</tr>
+<tr>
+<td>- pnl</td>
+<td>Double</td>
+<td>盈亏</td>
+</tr>
+<tr>
+<td>- fee</td>
+<td>Double</td>
+<td>累积手续费</td>
+</tr>
+<tr>
+<td>- matchTime</td>
+<td>Long</td>
+<td>成交时间</td>
+</tr>
+</tbody></table>
+<h2 id='274ba04bb9'><span id="3">用户强减记录</span></h2>
+<p>获取全部成交记录</p>
+<h3 id='http-16'>HTTP请求:</h3>
+<ul>
+<li>GET /api/future/queryFlOrders</li>
+</ul>
+
+<blockquote>
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1624882627001000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100023</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100280034</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1703812925489153"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"applId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"bankruptcyPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closeQty"</span><span class="p">:</span><span class="w"> </span><span class="mi">799</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"filledCurrency"</span><span class="p">:</span><span class="w"> </span><span class="mf">27509.410200000000000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"filledQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">799</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"canceledQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"orderStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"feeRatio"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"marginType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"bonusAccountType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lossUserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100023</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"profitUserId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"execId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lossMarginType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"profitMarginType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closePrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">34429.800000000000000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closeAmt"</span><span class="p">:</span><span class="w"> </span><span class="mf">34429.800000000000000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lossSubsidy"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"profitSubsidy"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"takerSide"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='1f9ac54b15-14'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>int</td>
+<td>N</td>
+<td>合约id</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>string</td>
+<td>N</td>
+<td>结束时间</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>string</td>
+<td>N</td>
+<td>开始时间</td>
+</tr>
+<tr>
+<td>pageNum</td>
+<td>string</td>
+<td>N</td>
+<td>页数</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>string</td>
+<td>N</td>
+<td>每页数量</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>N</td>
+<td>方向 -1上一页 1下一页</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-16'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>- applId</td>
+<td>int</td>
+<td>期货ID,2</td>
+</tr>
+<tr>
+<td>- timestamp</td>
+<td>Long</td>
+<td>委托时间</td>
+</tr>
+<tr>
+<td>- contractId</td>
+<td>Long</td>
+<td>交易对ID、合约号</td>
+</tr>
+<tr>
+<td>- userId</td>
+<td>Long</td>
+<td>用户ID</td>
+</tr>
+<tr>
+<td>- uuid</td>
+<td>String</td>
+<td>委托编号</td>
+</tr>
+<tr>
+<td>- side</td>
+<td>int</td>
+<td>买卖方向</td>
+</tr>
+<tr>
+<td>- closeQty</td>
+<td>int</td>
+<td>委托量</td>
+</tr>
+<tr>
+<td>- closePrice</td>
+<td>Double</td>
+<td>委托量</td>
+</tr>
+<tr>
+<td>- closeAmt</td>
+<td>Double</td>
+<td>委托量</td>
+</tr>
+<tr>
+<td>- filledCurrency</td>
+<td>Double</td>
+<td>成交金额</td>
+</tr>
+<tr>
+<td>- filledQuantity</td>
+<td>int</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>- canceledQuantity</td>
+<td>int</td>
+<td>撤单数量</td>
+</tr>
+<tr>
+<td>- orderStatus</td>
+<td>int</td>
+<td>委托状态 4 成交</td>
+</tr>
+<tr>
+<td>- feeRatio</td>
+<td>Double</td>
+<td>手续费</td>
+</tr>
+<tr>
+<td>- marginType</td>
+<td>int</td>
+<td>保证金类型</td>
+</tr>
+<tr>
+<td>- lossUserId</td>
+<td>int</td>
+<td>强减用户（亏损方）</td>
+</tr>
+<tr>
+<td>- profitUserId</td>
+<td>int</td>
+<td>被强减用户（盈利方）</td>
+</tr>
+<tr>
+<td>- execId</td>
+<td>int</td>
+<td>成交编号</td>
+</tr>
+<tr>
+<td>- lossMarginType</td>
+<td>int</td>
+<td>强减用户（亏损方）保证金类型</td>
+</tr>
+<tr>
+<td>- profitMarginType</td>
+<td>int</td>
+<td>被强减用户（盈利方）保证金类型</td>
+</tr>
+</tbody></table>
+<h2 id='db55aab9f9'><span id="3">用户强平记录</span></h2>
+<p>获取全部成交记录</p>
+<h3 id='http-17'>HTTP请求:</h3>
+<ul>
+<li>GET /api/future/queryFcOrders</li>
+</ul>
+
+<blockquote>
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1625043178024000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100023</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100280034</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1703981275414529"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"applId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"bankruptcyPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closeQty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"filledCurrency"</span><span class="p">:</span><span class="w"> </span><span class="mf">35.108000000000000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"filledQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"canceledQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"orderStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"feeRatio"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"marginType"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"bonusAccountType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lossUserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100023</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"profitUserId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"execId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lossMarginType"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"profitMarginType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closePrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">34789.200000000000000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"closeAmt"</span><span class="p">:</span><span class="w"> </span><span class="mf">34789.200000000000000000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lossSubsidy"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"profitSubsidy"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"takerSide"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='1f9ac54b15-15'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>int</td>
+<td>N</td>
+<td>合约id</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>string</td>
+<td>N</td>
+<td>结束时间</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>string</td>
+<td>N</td>
+<td>开始时间</td>
+</tr>
+<tr>
+<td>pageNum</td>
+<td>string</td>
+<td>N</td>
+<td>页数</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>string</td>
+<td>N</td>
+<td>每页数量</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>N</td>
+<td>方向 -1上一页 1下一页</td>
+</tr>
+</tbody></table>
+<h3 id='2213f4c32f-17'>响应数据</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>- applId</td>
+<td>int</td>
+<td>期货ID,2</td>
+</tr>
+<tr>
+<td>- timestamp</td>
+<td>Long</td>
+<td>委托时间</td>
+</tr>
+<tr>
+<td>- contractId</td>
+<td>Long</td>
+<td>交易对ID、合约号</td>
+</tr>
+<tr>
+<td>- userId</td>
+<td>Long</td>
+<td>用户ID</td>
+</tr>
+<tr>
+<td>- uuid</td>
+<td>String</td>
+<td>委托编号</td>
+</tr>
+<tr>
+<td>- side</td>
+<td>int</td>
+<td>买卖方向</td>
+</tr>
+<tr>
+<td>- closeQty</td>
+<td>int</td>
+<td>委托量</td>
+</tr>
+<tr>
+<td>- closePrice</td>
+<td>Double</td>
+<td>委托量</td>
+</tr>
+<tr>
+<td>- closeAmt</td>
+<td>Double</td>
+<td>委托量</td>
+</tr>
+<tr>
+<td>- filledCurrency</td>
+<td>Double</td>
+<td>成交金额</td>
+</tr>
+<tr>
+<td>- filledQuantity</td>
+<td>int</td>
+<td>成交量</td>
+</tr>
+<tr>
+<td>- canceledQuantity</td>
+<td>int</td>
+<td>撤单数量</td>
+</tr>
+<tr>
+<td>- orderStatus</td>
+<td>int</td>
+<td>委托状态 4 成交</td>
+</tr>
+<tr>
+<td>- feeRatio</td>
+<td>Double</td>
+<td>手续费</td>
+</tr>
+<tr>
+<td>- marginType</td>
+<td>int</td>
+<td>保证金类型</td>
+</tr>
+<tr>
+<td>- lossUserId</td>
+<td>int</td>
+<td>强减用户（亏损方）</td>
+</tr>
+<tr>
+<td>- profitUserId</td>
+<td>int</td>
+<td>被强减用户（盈利方）</td>
+</tr>
+<tr>
+<td>- execId</td>
+<td>int</td>
+<td>成交编号</td>
+</tr>
+<tr>
+<td>- lossMarginType</td>
+<td>int</td>
+<td>强减用户（亏损方）保证金类型</td>
+</tr>
+<tr>
+<td>- profitMarginType</td>
+<td>int</td>
+<td>被强减用户（盈利方）保证金类型</td>
+</tr>
+</tbody></table>
+<h1 id='43ee760de5'>行情相关</h1><h2 id='k'><span id="7">获取历史K线</span></h2><h3 id='http-18'>HTTP请求:</h3>
+<ul>
+<li>GET /v1/futureQuot/queryCandlestick</li>
+</ul>
+
+<blockquote>
+<p>注意：返回结果是按时间正序</p>
+
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">[</span><span class="w">
+                </span><span class="mi">1632794100000</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"43762"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"43762"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"43762"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"43762"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"0"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100280034</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='1f9ac54b15-16'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>int</td>
+<td>Y</td>
+<td>合约id</td>
+</tr>
+<tr>
+<td>range</td>
+<td>string</td>
+<td>Y</td>
+<td>K线类型      1Min : 60000  3Min : 180000  5Min : 300000  15Min : 900000  30Min : 1800000  1Hour : 3600000  2Hour : 7200000  4Hour : 14400000  6Hour : 21600000  12Hour : 43200000  1Day : 86400000  1Week : 604800000</td>
+</tr>
+<tr>
+<td>end</td>
+<td>string</td>
+<td>N</td>
+<td>截止时间 默认当前时间，传第一条记录的时间，可以实现滚动翻页</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>string</td>
+<td>N</td>
+<td>查询记录条数  默认 1440</td>
+</tr>
+</tbody></table>
+<h3 id='f3324f4e0c'>响应数据:</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0：成功，其他失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>错误信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>├─lines</td>
+<td>List[]</td>
+<td>[时间戳，开仓价，最高价格，最低价格，收盘价，成交张数]</td>
+</tr>
+</tbody></table>
+<h2 id='0a8d744c83'><span id="7">查询行情快照</span></h2><h3 id='http-19'>HTTP请求:</h3>
+<ul>
+<li>GET /v1/futureQuot/querySnapshot</li>
+</ul>
+
+<blockquote>
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"contractId"</span><span class="p">:</span><span class="w"> </span><span class="mi">100100000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"50999"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"112"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"51001"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"67"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"fr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000033"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56673.9"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">100100000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pv"</span><span class="p">:</span><span class="w"> </span><span class="mi">2158</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ph"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51001"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"116"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5916.096"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50999"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56673.8"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pfr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000033"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pcr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00003922"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51001"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='1f9ac54b15-17'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>int</td>
+<td>Y</td>
+<td>合约id</td>
+</tr>
+</tbody></table>
+<h3 id='f3324f4e0c-2'>响应数据:</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0：成功，其他失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>错误信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>├─cid</td>
+<td>Long</td>
+<td>交易对id</td>
+</tr>
+<tr>
+<td>├─ip</td>
+<td>Double</td>
+<td>指数价</td>
+</tr>
+<tr>
+<td>├─mp</td>
+<td>Double</td>
+<td>标记价</td>
+</tr>
+<tr>
+<td>├─lp</td>
+<td>Double</td>
+<td>最新价</td>
+</tr>
+<tr>
+<td>├─pv</td>
+<td>Long</td>
+<td>持仓量</td>
+</tr>
+<tr>
+<td>├─tv</td>
+<td>Long</td>
+<td>24小时成交量</td>
+</tr>
+<tr>
+<td>├─tt</td>
+<td>Long</td>
+<td>24小时成交额</td>
+</tr>
+<tr>
+<td>├─ph</td>
+<td>Double</td>
+<td>24小时最高价</td>
+</tr>
+<tr>
+<td>├─pl</td>
+<td>Double</td>
+<td>24小时最低价</td>
+</tr>
+<tr>
+<td>├─pcr</td>
+<td>Double</td>
+<td>24小时涨跌幅率</td>
+</tr>
+<tr>
+<td>├─fr</td>
+<td>Double</td>
+<td>资金费率</td>
+</tr>
+<tr>
+<td>├─pfr</td>
+<td>Double</td>
+<td>预测资金费率</td>
+</tr>
+<tr>
+<td>├─bids</td>
+<td>List</td>
+<td>买盘 [价格，张数]</td>
+</tr>
+<tr>
+<td>├─asks</td>
+<td>List</td>
+<td>买盘 [价格，张数]</td>
+</tr>
+</tbody></table>
+<h2 id='1690314e40'><span id="7">获取最新成交</span></h2><h3 id='http-20'>HTTP请求:</h3>
+<ul>
+<li>GET /v1/futureQuot/queryTickTrade</li>
+</ul>
+
+<blockquote>
+<p>注意：返回结果是按时间正序</p>
+
+<p>响应</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">[</span><span class="w">
+                </span><span class="mi">1631779278982000</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"51000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="mi">1</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="w">
+                </span><span class="mi">1631779329355000</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"50000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="mi">-1</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='1f9ac54b15-18'>请求参数</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>required</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>int</td>
+<td>Y</td>
+<td>合约id</td>
+</tr>
+</tbody></table>
+<h3 id='f3324f4e0c-3'>响应数据:</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>0：成功，其他失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>错误信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>├─trades</td>
+<td>List[]</td>
+<td>[时间戳，成交价，成交张数，成交方向（1多 -1空）]</td>
+</tr>
+</tbody></table>
+<h1 id='websocket'>Websocket行情数据</h1><h2 id='5ea2e0cde2'>简介</h2><h3 id='url'>接入URL</h3>
+<p><code>
+wss://ws-futures.coinstore.com/socket.io/?EIO=3&amp;transport=websocket
+</code></p>
+<h3 id='1da6708ecc'>鉴权</h3>
+<p>注：signature: 签名方式同restful</p>
+<div class="highlight"><pre class="highlight plaintext"><code>[
+    "auth",
+    {
+        "header": {
+            "type": 1001
+        },
+        "body": {
+            "apiKey": "AccessKey",
+            "expires": "expires",
+            "signature": "signature"
+        }
+    }
+]
+</code></pre></div><h3 id='5319af762d'>订阅</h3>
+<p>根据是否需要鉴权之后来进行业务topic的订阅，下面式是订阅的标准格式，在相关ws接口说明里有详细的说明</p>
+<div class="highlight"><pre class="highlight plaintext"><code>[
+    "subscribe",
+    {
+        "header": {
+            "type": 1003
+        },
+        "body": {
+            "topics": [
+                {
+                    "topic": "indicator",
+                    "params": {
+                        "symbols": [
+                            {
+                                "symbol": 0
+                            }
+                        ]
+                    }
+                },
+                {
+                    "topic": "future_snapshot_depth",
+                    "params": {
+                        "symbols": [
+                            {
+                                "symbol": 0
+                            }
+                        ]
+                    }
+                },
+                {
+                    "topic": "future_tick",
+                    "params": {
+                        "symbols": [
+                            {
+                                "symbol": 0
+                            }
+                        ]
+                    }
+                },
+                {
+                    "topic": "match"
+                },
+                {
+                    "topic": "future_kline",
+                    "params": {
+                        "symbols": [
+                            {
+                                "symbol": 0,
+                                "ranges": [
+                                    "60000"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+]
+</code></pre></div><h3 id='topic'>订阅 Topic 列表</h3>
+<table><thead>
+<tr>
+<th>topic</th>
+<th>类型</th>
+<th>描述</th>
+<th>需要验签</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>future_tick</td>
+<td>SUB</td>
+<td>获取逐笔成交</td>
+<td>否</td>
+</tr>
+<tr>
+<td>future_kline</td>
+<td>SUB</td>
+<td>获取K线</td>
+<td>否</td>
+</tr>
+<tr>
+<td>future_snapshot_depth</td>
+<td>SUB</td>
+<td>获取行情快照买卖档位</td>
+<td>否</td>
+</tr>
+<tr>
+<td>indicator</td>
+<td>SUB</td>
+<td>获取行情数据</td>
+<td>否</td>
+</tr>
+<tr>
+<td>match</td>
+<td>SUB</td>
+<td>获取当前委托、持仓、资产</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<h2 id='k-2'>获取K线</h2><h3 id='topic-future_kline'>订阅topic: future_kline</h3>
+<p>数据格式中的symbol值为：合约ID</p>
+<h3 id='ranges'>ranges的取值范围：</h3>
+<ul>
+<li>1Min = 60000</li>
+<li>5Min = 300000</li>
+<li>15Min = 900000</li>
+<li>30Min = 1800000</li>
+<li>1Hour = 3600000</li>
+<li>4Hour = 14400000</li>
+<li>12Hour = 43200000</li>
+<li>1Day = 86400000</li>
+<li>1Week = 604800000</li>
+</ul>
+
+<blockquote>
+<p>消息订阅格式如下所示：</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [
+            {
+                "topic": "future_kline",
+                "params": {
+                    "symbols": [
+                        {
+                            "symbol": 100,
+                            "ranges": [
+                                "60000"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
+</code></pre></div><h3 id='4ea192405d'>返回结构</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>long</td>
+<td>合约ID</td>
+</tr>
+<tr>
+<td>range</td>
+<td>String</td>
+<td>范围</td>
+</tr>
+<tr>
+<td>lines</td>
+<td>object []</td>
+<td>[ [${时间戳}, ${开市价格}, ${最高价格}, ${最低价格}, ${闭市价格}, ${成交量}] ]</td>
+</tr>
+</tbody></table>
+<h2 id='d07a7e664f'>获取逐笔成交</h2><h4 id='topic-future_tick'>订阅topic: future_tick</h4>
+<p>数据格式中的symbol值为：合约ID</p>
+
+<blockquote>
+<p>消息订阅格式如下所示：</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [
+            {
+                "topic": "future_tick",
+                "params": {
+                    "symbols": [
+                        {
+                            "symbol": 100
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
+</code></pre></div><h3 id='4ea192405d-2'>返回结构</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>long</td>
+<td>合约ID</td>
+</tr>
+<tr>
+<td>trades</td>
+<td>object []</td>
+<td>[ [${时间戳}, ${成交价格}, ${成交数量}, ${方向(1 多； 2 空)}] ] ]</td>
+</tr>
+</tbody></table>
+<h2 id='707972a6ed'>获取行情快照买卖档位</h2><h3 id='topic-future_snapshot_depth'>订阅topic: future_snapshot_depth</h3>
+<p>数据格式中的symbol值为：合约ID</p>
+
+<blockquote>
+<p>消息订阅格式如下所示：</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [
+            {
+                "topic": "future_snapshot_depth",
+                "params": {
+                    "symbols": [
+                        {
+                            "symbol": 100
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
+</code></pre></div><h3 id='4ea192405d-3'>返回结构</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contractId</td>
+<td>long</td>
+<td>合约ID</td>
+</tr>
+<tr>
+<td>bids</td>
+<td>object []</td>
+<td>买档位数据列表   [ [${价格}, ${数量}] ] ]</td>
+</tr>
+<tr>
+<td>asks</td>
+<td>object []</td>
+<td>卖档位数据列表  [ [${价格}, ${数量}] ] ]</td>
+</tr>
+</tbody></table>
+<h2 id='e601062c77'>获取行情快照基础数据</h2><h3 id='topic-indicator'>订阅topic: indicator</h3>
+<p>数据格式中的symbol值为：合约ID</p>
+
+<blockquote>
+<p>消息订阅格式如下所示：</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [
+            {
+                "topic": "indicator",
+                 "params": {
+                       "symbols": [
+                           {
+                               "symbol": 100
+                            }
+                        ]
+                 }
+            }
+        ]
+    }
+}
+</code></pre></div><h3 id='4ea192405d-4'>返回结构</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>indicators</td>
+<td>List<Indicator></td>
+<td>交易对行情</td>
+</tr>
+<tr>
+<td>markets</td>
+<td>List<Market></td>
+<td>行情概况</td>
+</tr>
+<tr>
+<td>account</td>
+<td>List<Account></td>
+<td>私有数据</td>
+</tr>
+</tbody></table>
+
+<p><strong>注意：未登录时 accounts为null</strong>
+<strong>注意：订阅时 params.symbols 为空，则 indicators 为 null</strong>
+<strong>注意：topic默认频率 1s, markets 默认频率 3s，即每3秒有2次推送消息 markets 为null</strong></p>
+<h4 id='indicator'>Indicator</h4>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cid</td>
+<td>Long</td>
+<td>交易对id</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>BigDecimal</td>
+<td>指数价</td>
+</tr>
+<tr>
+<td>mp</td>
+<td>BigDecimal</td>
+<td>标记价</td>
+</tr>
+<tr>
+<td>lp</td>
+<td>BigDecimal</td>
+<td>最新价</td>
+</tr>
+<tr>
+<td>pv</td>
+<td>Long</td>
+<td>持仓量</td>
+</tr>
+<tr>
+<td>tv</td>
+<td>Long</td>
+<td>24小时成交量</td>
+</tr>
+<tr>
+<td>tt</td>
+<td>Long</td>
+<td>24小时成交额</td>
+</tr>
+<tr>
+<td>ph</td>
+<td>BigDecimal</td>
+<td>24小时最高价</td>
+</tr>
+<tr>
+<td>pl</td>
+<td>BigDecimal</td>
+<td>24小时最低价</td>
+</tr>
+<tr>
+<td>pcr</td>
+<td>BigDecimal</td>
+<td>24小时涨跌幅率</td>
+</tr>
+<tr>
+<td>fr</td>
+<td>BigDecimal</td>
+<td>资金费率</td>
+</tr>
+<tr>
+<td>pfr</td>
+<td>BigDecimal</td>
+<td>预测资金费率</td>
+</tr>
+</tbody></table>
+<h4 id='market'>Market</h4>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cid</td>
+<td>Long</td>
+<td>交易对id</td>
+</tr>
+<tr>
+<td>lp</td>
+<td>BigDecimal</td>
+<td>最新价</td>
+</tr>
+<tr>
+<td>pcr</td>
+<td>BigDecimal</td>
+<td>24小时涨跌幅率</td>
+</tr>
+<tr>
+<td>tv</td>
+<td>Long</td>
+<td>24小时成交量</td>
+</tr>
+<tr>
+<td>tt</td>
+<td>Long</td>
+<td>24小时成交额</td>
+</tr>
+</tbody></table>
+<h4 id='account'>Account</h4>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>aid</td>
+<td>Long</td>
+<td>账号id 主账号或者子账号</td>
+</tr>
+<tr>
+<td>at</td>
+<td>int</td>
+<td>账号类型  1 主账号  10 体验金账号</td>
+</tr>
+<tr>
+<td>assets</td>
+<td>List<Asset></td>
+<td>资产信息</td>
+</tr>
+<tr>
+<td>posis</td>
+<td>List<Posi></td>
+<td>仓位信息</td>
+</tr>
+</tbody></table>
+<h4 id='asset'>Asset</h4>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cid</td>
+<td>Long</td>
+<td>币种ID</td>
+</tr>
+<tr>
+<td>avail</td>
+<td>BigDecimal</td>
+<td>可用余额</td>
+</tr>
+<tr>
+<td>upnl</td>
+<td>BigDecimal</td>
+<td>全仓未实现盈亏</td>
+</tr>
+</tbody></table>
+<h4 id='posi'>Posi</h4>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pid</td>
+<td>Long</td>
+<td>仓位ID</td>
+</tr>
+<tr>
+<td>flp</td>
+<td>BigDecimal</td>
+<td>强平价格</td>
+</tr>
+<tr>
+<td>upnl</td>
+<td>BigDecimal</td>
+<td>未实现盈亏</td>
+</tr>
+<tr>
+<td>adl</td>
+<td>int</td>
+<td>ADL等级</td>
+</tr>
+<tr>
+<td>mp</td>
+<td>BigDecimal</td>
+<td>标记价</td>
+</tr>
+</tbody></table>
+
+<p><strong>注意：pid为 3012推送仓位的id</strong></p>
+<h2 id='8340d3206e'>获取私有数据</h2><h3 id='topic-match'>订阅topic: match</h3>
+<blockquote>
+<p>消息订阅格式如下所示：</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "header": {
+        "type": 1003
+    },
+    "body": {
+        "topics": [
+            {
+                "topic": "match"
+            }
+        ]
+    }
+}
+</code></pre></div><h3 id='4ea192405d-5'>返回结构</h3><h4 id='713fd96fb2'>资产</h4>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>messageType</td>
+<td>int</td>
+<td>消息类型 3002</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>long</td>
+<td>用户ID</td>
+</tr>
+<tr>
+<td>currencyId</td>
+<td>long</td>
+<td>币种ID</td>
+</tr>
+<tr>
+<td>totalBalance</td>
+<td>double</td>
+<td>总资产</td>
+</tr>
+<tr>
+<td>available</td>
+<td>double</td>
+<td>可用资产</td>
+</tr>
+<tr>
+<td>frozenInitMargin</td>
+<td>double</td>
+<td>委托冻结保证金</td>
+</tr>
+<tr>
+<td>initMargin</td>
+<td>double</td>
+<td>已占用保证金</td>
+</tr>
+<tr>
+<td>closeProfitLoss</td>
+<td>double</td>
+<td>已实现盈亏</td>
+</tr>
+</tbody></table>
+<h4 id='c4b496308a'>持仓</h4>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>messageType</td>
+<td>int</td>
+<td>消息类型 3012</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>long</td>
+<td>用户ID</td>
+</tr>
+<tr>
+<td>posis</td>
+<td>object[]</td>
+<td>持仓列表</td>
+</tr>
+<tr>
+<td>├─contractId</td>
+<td>long</td>
+<td>合约ID</td>
+</tr>
+<tr>
+<td>├─marginType</td>
+<td>int</td>
+<td>保证金类型，1全仓2逐仓</td>
+</tr>
+<tr>
+<td>├─initMarginRate</td>
+<td>String</td>
+<td>初始保证率</td>
+</tr>
+<tr>
+<td>├─maintainMarginRate</td>
+<td>String</td>
+<td>维持保证金</td>
+</tr>
+<tr>
+<td>├─initMargin</td>
+<td>String</td>
+<td>初始保证金</td>
+</tr>
+<tr>
+<td>├─extraMargin</td>
+<td>String</td>
+<td>额外保证金</td>
+</tr>
+<tr>
+<td>├─openAmt</td>
+<td>String</td>
+<td>开仓金额</td>
+</tr>
+<tr>
+<td>├─openPrice</td>
+<td>String</td>
+<td>开仓均价</td>
+</tr>
+<tr>
+<td>├─posiQty</td>
+<td>String</td>
+<td>持仓量，大于0多头，小于0空头</td>
+</tr>
+<tr>
+<td>├─contractUnit</td>
+<td>String</td>
+<td>合约单位</td>
+</tr>
+<tr>
+<td>├─closeProfitLoss</td>
+<td>String</td>
+<td>已实现盈亏</td>
+</tr>
+<tr>
+<td>├─liquidationPrice</td>
+<td>double</td>
+<td>预估强平价</td>
+</tr>
+<tr>
+<td>├─unRealizedProfit</td>
+<td>double</td>
+<td>未实现盈亏</td>
+</tr>
+</tbody></table>
+<h4 id='7f435f378c'>持仓配置</h4>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>messageType</td>
+<td>int</td>
+<td>消息类型 3022</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>long</td>
+<td>用户ID</td>
+</tr>
+<tr>
+<td>positionConfgs</td>
+<td>object[]</td>
+<td>持仓配置列表</td>
+</tr>
+<tr>
+<td>├─contractId</td>
+<td>long</td>
+<td>合约ID</td>
+</tr>
+<tr>
+<td>├─leverage</td>
+<td>int</td>
+<td>杠杆倍数, 0为自动模式</td>
+</tr>
+<tr>
+<td>├─isolated</td>
+<td>boolean</td>
+<td>保证金类型 默认 false全仓 true逐仓</td>
+</tr>
+</tbody></table>
+<h4 id='7454c3387f'>当前委托</h4>
+<table><thead>
+<tr>
+<th>code</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>messageType</td>
+<td>int</td>
+<td>消息类型 3004</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>long</td>
+<td>用户ID</td>
+</tr>
+<tr>
+<td>contractId</td>
+<td>long</td>
+<td>合约ID</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>string</td>
+<td>委托号</td>
+</tr>
+<tr>
+<td>clientOrderId</td>
+<td>string</td>
+<td>客户订单编号</td>
+</tr>
+<tr>
+<td>price</td>
+<td>string</td>
+<td>委托价格</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>string</td>
+<td>委托数量</td>
+</tr>
+<tr>
+<td>leftQuantity</td>
+<td>string</td>
+<td>剩余数量</td>
+</tr>
+<tr>
+<td>side</td>
+<td>number</td>
+<td>买卖方向（1：买，-1：卖）</td>
+</tr>
+<tr>
+<td>placeTimestamp</td>
+<td>number</td>
+<td>委托时间</td>
+</tr>
+<tr>
+<td>matchAmt</td>
+<td>string</td>
+<td>成交金额</td>
+</tr>
+<tr>
+<td>matchQty</td>
+<td>string</td>
+<td>成交张数</td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>number</td>
+<td>合约委托类型（1：限价，3：市价）</td>
+</tr>
+<tr>
+<td>positionEffect</td>
+<td>number</td>
+<td>开平标志（1：开仓，2：平仓）</td>
+</tr>
+<tr>
+<td>marginType</td>
+<td>number</td>
+<td>保证金类型（1、全仓，2：逐仓）</td>
+</tr>
+<tr>
+<td>initMarginRate</td>
+<td>string</td>
+<td>初始保证金率</td>
+</tr>
+<tr>
+<td>fcOrderId</td>
+<td>string</td>
+<td>强平委托号，空时为强平委托</td>
+</tr>
+<tr>
+<td>markPrice</td>
+<td>string</td>
+<td>标记价格</td>
+</tr>
+<tr>
+<td>feeRate</td>
+<td>string</td>
+<td>手续费率</td>
+</tr>
+<tr>
+<td>contractUnit</td>
+<td>string</td>
+<td>合约单位</td>
+</tr>
+<tr>
+<td>orderStatus</td>
+<td>int</td>
+<td>委托状态 0-未申报,1-正在申报,2-已申报未成交,3-部分成交,4-全部成交,5-部分撤单,6-全部撤单,7-撤单中,8-失效,11-缓存高于条件的委托,12-缓存低于条件的委托</td>
+</tr>
+</tbody></table>
+<h1 id='e08c1d4f9a'>错误码</h1><h3 id='33c0874e49'>错误码:</h3>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Comment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature-failed 401</td>
+<td>主账号冻结子账号登录权限</td>
+</tr>
+<tr>
+<td>signature-failed 401</td>
+<td>子账号被删除</td>
+</tr>
+<tr>
+<td>signature-failed 401</td>
+<td>Api key 错误</td>
+</tr>
+<tr>
+<td>unauthorized 1401</td>
+<td>请求ip不在IP白名单中</td>
+</tr>
+<tr>
+<td>unauthorized 1401</td>
+<td>签名失败</td>
+</tr>
+<tr>
+<td>unauthorized 1401</td>
+<td>用户登录 Token 失效</td>
+</tr>
+<tr>
+<td>signature error 3005</td>
+<td>签名生成错误</td>
+</tr>
+<tr>
+<td>symbol not found 3011</td>
+<td>该币对没有上线</td>
+</tr>
+<tr>
+<td>trade-limit 3013</td>
+<td>您暂时不具备合约交易资质，如有疑问请咨询客服，给您造成不便敬请谅解。</td>
+</tr>
+<tr>
+<td>user-trade-limit 3014</td>
+<td>当前子账号暂时不具备合约交易资质</td>
+</tr>
+<tr>
+<td>user-part-trade-limit 3015</td>
+<td>当前子账号已被限制交易当前合约币对</td>
+</tr>
+<tr>
+<td>duplicate-order 3111</td>
+<td>重复订单</td>
+</tr>
+<tr>
+<td>sub-user-operator-business-error 6001</td>
+<td>子账号不允许参与该业务</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
